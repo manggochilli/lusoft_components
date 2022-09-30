@@ -24,7 +24,7 @@ interface ButtonProps {
 	/**
 	 * Optional click handler
 	 */
-	//onClick?: () => void;
+	onClick?: () => void;
 }
 
 /**
@@ -86,17 +86,17 @@ export const Button = ({
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `;
 	const sizeclass = size === 'xs' ?
-		`p(0/2) r(3) font(10) regular `
+		`p(2) r(3) font(10) regular `
 	: size === 'sm' ?
-		`p(0/5) r(5) font(12) regular `
+		`p(5) r(5) font(12) regular `
 	: size === 'lg' ?
-		`p(0/7) r(7) font(15) regular `
+		`p(7) r(7) font(15) regular `
 	: size === 'xl' ?
-		`p(0/15) r(10) font(17) bold `
+		`p(10/15) r(10) font(17) bold `
 	: size === '2xl' ?
-		`p(0/25) r(15) font(25) bold `
+		`p(15/25) r(15) font(25) bold `
 	:
-		`p(0/7) r(7) font(15) regular `;
+		`p(7) r(7) font(15) regular `;
 	return (
 		<button
 			type="button"

@@ -1,6 +1,6 @@
+import '../css/theme.css'
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import '../components/theme.css'
 
 import { Button } from '../components/button';
 
@@ -143,6 +143,18 @@ export const Disabled = () => {
 			<div className='text-center'>
 				<Button kind="danger--ghost" size='lg' disabled>BUTTON</Button>
 			</div>
+		</div>
+	)
+}
+
+function clickme() {
+	alert('Click! Happy!!!!');
+}
+
+export const Click = () => {
+	return (
+		<div className='subbox gap(0/30)'>
+			<Button kind="secondary" size="lg" onClick={clickme}>Click me!</Button>
 		</div>
 	)
 }
