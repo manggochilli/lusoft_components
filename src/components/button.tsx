@@ -1,5 +1,4 @@
 import React from 'react';
-import * as usrConfig from '../components/config'
 
 interface ButtonProps {
 	/**
@@ -45,7 +44,7 @@ export const Button = ({
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'secondary' ?
-		`bg(${usrConfig.secondarycolor}) c(#fff) b(0) ` +
+		`bg(--color-secondary) c(#fff) b(0) ` +
 		`pointer transition(.2s) ` +
 		`hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
