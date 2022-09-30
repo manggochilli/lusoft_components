@@ -1,0 +1,26 @@
+:root {
+	/**
+	* --color- 포인트색상
+	*/
+
+	/**
+	* primary
+	*/
+	--color-primary: #2cb400;
+
+	/**
+	* secondary
+	*/
+	--color-secondary: #f90;
+
+	/**
+	* danger
+	*/
+	--color-danger: #e00000;
+
+	/**
+	* disabled
+	*/
+	--bg-disabled: #e9e9e9;
+	--c-disabled: #aaa;
+}
