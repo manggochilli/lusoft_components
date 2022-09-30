@@ -99,7 +99,7 @@ export const DangerButton = () => {
 
 export const sizes = () => {
 	return (
-		<div className='subbox gap(0/30)'>
+		<div className='hbox(bottom) gap(0/30)'>
 			<div className='text-center'>
 				<Button kind="primary" size='xs'>BUTTON</Button>
 			</div>
