@@ -24,17 +24,17 @@ css 에서 정한 색상이 배경색상으로 사용됩니다.
 
 -----
 
-# mdx문서 작성 테스트
-#뒤에 공백을 붙이면 타이틀로 인식합니다.
+# Primary class
 
-한 번의 줄바꿈은 줄바꿈으로 인식하지 않습니다.
-두 번의 줄바꿈은 줄바꿈으로 인식합니다.
-
------
-
-# 컴포넌트 적용 테스트
-
-<Button kind="primary">button test</Button>
+<pre><code>
+bg(--color-primary) c(#fff) b(0)<br />
+pointer transition(.2s)<br />
+hover:brightness(0.95) hover:elevation(4)<br />
+active:b(0) active:brightness(0.8) active:elevation(1)<br />
+disabled:bg(--bg-disabled) disabled:c(--c-disabled)<br />
+disabled:hover:brightness(1) disabled:hover:elevation(0)<br />
+disabled:active:brightness(1) disabled:active:elevation(0)
+</code></pre>
 
 <p></p>
 -----
@@ -44,11 +44,11 @@ css 에서 정한 색상이 배경색상으로 사용됩니다.
 
 * 샘플 컴포넌트
 
-<Button kind="primary" size="lg" usrclass="c(green)">button test</Button>
+<Button kind="primary" size="large" usrclass="c(green)">button test</Button>
 
 * pre code 태그 적용
 
-<pre><code><Button kind="primary" size="lg" usrclass="c(green)">button test</Button></code></pre>
+<pre><code><Button kind="primary" size="large" usrclass="c(green)">button test</Button></code></pre>
 
 code 태그의 기본 스타일은 적용되지만 코드 내용을 보여주진 못하고 컴포넌트 내용을 그대로 실행함.
 

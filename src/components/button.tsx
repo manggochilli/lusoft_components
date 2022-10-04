@@ -8,7 +8,7 @@ interface ButtonProps {
 	/**
 	 * 크기 설정
 	 */
-	size?: '' | 'xs' | 'sm' | 'lg' | 'xl' | '2xl';
+	size?: '' | 'small' | 'medium' | 'large' | 'expressive' | 'extralarge';
 	/**
 	 * 사용자 추가 클래스
 	 */
@@ -32,7 +32,7 @@ interface ButtonProps {
  */
 export const Button = ({
 	kind,
-	size = 'lg',
+	size = 'large',
 	usrclass,
 	children,
 	...props
@@ -50,15 +50,15 @@ export const Button = ({
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'tertiary' ?
-		`bg(#fff) c(#0f62fe) b(1) bc(#0f62fe) ` +
+		`bg(#fff) c(--color-primary) b(1) bc(--color-primary) ` +
 		`pointer transition(.2s) ` +
-		`hover:bg(#0f62fe) hover:c(#fff) hover:brightness(0.95) hover:elevation(4) ` +
+		`hover:bg(--color-primary) hover:c(#fff) hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:b(0) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'ghost' ?
-		`bg(#fff) c(#608df9) b(0) ` +
+		`bg(#fff) c(--color-primary) b(0) ` +
 		`pointer transition(.2s) ` +
-		`hover:bg(#eee) hover:c(#55f) hover:brightness(0.95) hover:elevation(4) ` +
+		`hover:bg(#dfdfdf) hover:c(--color-primary) hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'danger' ?
@@ -85,16 +85,16 @@ export const Button = ({
 		`hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `;
-	const sizeclass = size === 'xs' ?
-		`p(2) r(3) font(10) regular `
-	: size === 'sm' ?
-		`p(5) r(5) font(12) regular `
-	: size === 'lg' ?
-		`p(7) r(7) font(15) regular `
-	: size === 'xl' ?
-		`p(10/15) r(10) font(17) bold `
-	: size === '2xl' ?
-		`p(15/25) r(15) font(25) bold `
+	const sizeclass = size === 'small' ?
+		`h(34) p(2) r(8) font(14) 400 `
+	: size === 'medium' ?
+		`h(40) p(2) r(8) font(14) 400 `
+	: size === 'large' ?
+		`h(50) p(2) r(8) font(14) 400 `
+	: size === 'expressive' ?
+		`h(46) p(2) r(8) font(14) 400 `
+	: size === 'extralarge' ?
+		`h(66) p(2) r(8) font(14) 400 `
 	:
 		`p(7) r(7) font(15) regular `;
 	return (

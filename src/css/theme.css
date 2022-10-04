@@ -6,21 +6,21 @@
 	/**
 	* primary
 	*/
-	--color-primary: #2cb400;
+	--color-primary: #15BD66;
 
 	/**
 	* secondary
 	*/
-	--color-secondary: #f90;
+	--color-secondary: #383838;
 
 	/**
 	* danger
 	*/
-	--color-danger: #e00000;
+	--color-danger: #FF003E;
 
 	/**
 	* disabled
 	*/
-	--bg-disabled: #e9e9e9;
-	--c-disabled: #aaa;
+	--bg-disabled: #E8E8E8;
+	--c-disabled: #9E9E9E;
 }

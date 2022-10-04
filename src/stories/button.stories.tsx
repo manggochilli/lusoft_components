@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Default = Template.bind({});
 Default.args = {
 	kind: '',
-	size: 'lg',
+	size: 'large',
 	usrclass: '',
 	children: 'BUTTON',
 };
@@ -33,7 +33,7 @@ Default.story = {
 export const PrimaryButton = Template.bind({});
 PrimaryButton.args = {
   kind: 'primary',
-  size: 'lg',
+  size: 'large',
   usrclass: '',
   children: 'Primary',
 };
@@ -46,7 +46,7 @@ PrimaryButton.story = {
 export const SecondaryButton = Template.bind({});
 SecondaryButton.args = {
   kind: 'secondary',
-  size: 'lg',
+  size: 'large',
   usrclass: '',
   children: 'Secondary',
 };
@@ -59,7 +59,7 @@ SecondaryButton.story = {
 export const TertiaryButton = Template.bind({});
 TertiaryButton.args = {
   kind: 'tertiary',
-  size: 'lg',
+  size: 'large',
   usrclass: '',
   children: 'Tertiary',
 };
@@ -72,7 +72,7 @@ TertiaryButton.story = {
 export const GhostButton = Template.bind({});
 GhostButton.args = {
   kind: 'ghost',
-  size: 'lg',
+  size: 'large',
   usrclass: '',
   children: 'Ghost',
 };
@@ -85,13 +85,13 @@ export const DangerButton = () => {
 	return (
 		<div className='subbox gap(0/30)'>
 			<div className='text-center'>
-				<Button kind="danger" size='lg'>BUTTON</Button>
+				<Button kind="danger" size='large'>BUTTON</Button>
 			</div>
 			<div className='text-center'>
-				<Button kind="danger--tertiary" size='lg'>BUTTON</Button>
+				<Button kind="danger--tertiary" size='large'>BUTTON</Button>
 			</div>
 			<div className='text-center'>
-				<Button kind="danger--ghost" size='lg'>BUTTON</Button>
+				<Button kind="danger--ghost" size='large'>BUTTON</Button>
 			</div>
 		</div>
 	)
@@ -101,19 +101,19 @@ export const sizes = () => {
 	return (
 		<div className='hbox(bottom) gap(0/30)'>
 			<div className='text-center'>
-				<Button kind="primary" size='xs'>BUTTON</Button>
+				<Button kind="primary" size='small'>SMALL</Button>
 			</div>
 			<div className='text-center'>
-				<Button kind="primary" size='sm'>BUTTON</Button>
+				<Button kind="primary" size='medium'>MEDIUM</Button>
 			</div>
 			<div className='text-center'>
-				<Button kind="primary" size='lg'>BUTTON</Button>
+				<Button kind="primary" size='large'>LARGE</Button>
 			</div>
 			<div className='text-center'>
-				<Button kind="primary" size='xl'>BUTTON</Button>
+				<Button kind="primary" size='expressive'>EXPRESSIVE</Button>
 			</div>
 			<div className='text-center'>
-				<Button kind="primary" size='2xl'>BUTTON</Button>
+				<Button kind="primary" size='extralarge'>EXTRALARGE</Button>
 			</div>
 		</div>
 	)
@@ -123,25 +123,25 @@ export const Disabled = () => {
 	return (
 		<div className='subbox gap(0/30)'>
 			<div className='text-center'>
-				<Button kind="primary" size='lg' disabled>BUTTON</Button>
+				<Button kind="primary" size='large' disabled>Primary</Button>
 			</div>
 			<div className='text-center'>
-				<Button kind="secondary" size='lg' disabled>BUTTON</Button>
+				<Button kind="secondary" size='large' disabled>Secondary</Button>
 			</div>
 			<div className='text-center'>
-				<Button kind="tertiary" size='lg' disabled>BUTTON</Button>
+				<Button kind="tertiary" size='large' disabled>Tertiary</Button>
 			</div>
 			<div className='text-center'>
-				<Button kind="ghost" size='lg' disabled>BUTTON</Button>
+				<Button kind="ghost" size='large' disabled>Ghost</Button>
 			</div>
 			<div className='text-center'>
-				<Button kind="danger" size='lg' disabled>BUTTON</Button>
+				<Button kind="danger" size='large' disabled>Danger</Button>
 			</div>
 			<div className='text-center'>
-				<Button kind="danger--tertiary" size='lg' disabled>BUTTON</Button>
+				<Button kind="danger--tertiary" size='large' disabled>Danger--tertiary</Button>
 			</div>
 			<div className='text-center'>
-				<Button kind="danger--ghost" size='lg' disabled>BUTTON</Button>
+				<Button kind="danger--ghost" size='large' disabled>Danger--ghost</Button>
 			</div>
 		</div>
 	)
@@ -154,7 +154,7 @@ function clickme() {
 export const Click = () => {
 	return (
 		<div className='subbox gap(0/30)'>
-			<Button kind="secondary" size="lg" onClick={clickme}>Click me!</Button>
+			<Button kind="secondary" size="lartge" onClick={clickme}>Click me!</Button>
 		</div>
 	)
 }
