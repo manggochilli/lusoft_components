@@ -1,54 +1,32 @@
-import "./css/theme.css"
-import { useState } from 'react'
-import { Button } from './components/button';
-import './App.css'
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./css/theme.css";
 
-// 클릭이벤트
-function clickme() {
-	alert('Click!');
-}
+// Pages
+import PageHeader from './pages/header';
+import PageFooter from './pages/footer';
+import PageIndex from './pages/index';
+
+import PageButtons from './pages/component_Button';
+import PageInputText from './pages/component_InputText';
+
+import PageTestHandshake from './pages/test_handshake';
+import PageTestComponent from './pages/test_component';
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
-		<div className="relative pack">
-			<div className="w(90vw)">
-				<div className="block m(20/0) p(0) font(25) bold text-center">React/Components - Button</div>
-				<hr />
-				<div className="block m(20/0/10) p(0/0) font-size(21)">
-					<span className="bold">Sample Default Setting - use kind set</span>
-				</div>
-				<div>
-					<Button kind={'primary'} size={'xl'} usrclass="m(10)">Button Test - primary</Button>
-					<Button kind={'secondary'} size={'xl'} usrclass="m(10)">Button Test - secondary</Button>
-					<Button kind={'tertiary'} size={'xl'} usrclass="m(10)">Button Test - tertiary</Button>
-					<Button kind={'ghost'} size={'xl'} usrclass="m(10)">Button Test - ghost</Button>
-					<div>
-						<Button kind={'danger'} size={'xl'} usrclass="m(10)">Button Test - danger</Button>
-						<Button kind={'danger--tertiary'} size={'xl'} usrclass="m(10)">Button Test - danger--tertiary</Button>
-						<Button kind={'danger--ghost'} size={'xl'} usrclass="m(10)">Button Test - danger--ghost</Button>
-					</div>
-				</div>
-				<hr />
-				<div className="block m(20/0/10) p(0/0) font-size(21)">
-					<span className="bold">Sample Default Setting - use size set</span>
-				</div>
-				<div>
-					<Button kind={'primary'} size={'xs'} usrclass="m(10)">Button Test - xs</Button>
-					<Button kind={'primary'} size={'sm'} usrclass="m(10)">Button Test - sm</Button>
-					<Button kind={'primary'} size={'lg'} usrclass="m(10)">Button Test - lg</Button>
-					<Button kind={'primary'} size={'xl'} usrclass="m(10)">Button Test - xl</Button>
-					<Button kind={'primary'} size={'2xl'} usrclass="m(10)">Button Test - 2xl</Button>
-				</div>
-				<hr />
-				<div className="block m(20/0/10) p(0/0) font-size(21)">
-					<span className="bold">Click Event Test</span>
-				</div>
-				<div>
-					<Button kind={'secondary'} size={'lg'} onClick={clickme}>Click me!!!</Button>
-				</div>
-			</div>
+		<div className="relative w(100vw) sm h(100vh)">
+			<BrowserRouter>
+				<PageHeader />
+				<Routes>
+					<Route index element={<PageIndex />} />
+					<Route path="/test/handshake" element={<PageTestHandshake />} />
+					<Route path="/test/component" element={<PageTestComponent />} />
+					<Route path="/component/Button" element={<PageButtons />} />
+					<Route path="/component/InputText" element={<PageInputText />} />
+				</Routes>
+				<PageFooter />
+			</BrowserRouter>
 		</div>
 	)
 }
