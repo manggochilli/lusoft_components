@@ -75,15 +75,15 @@ function TestComponent() {
 				{/** <Login_group/> */}
 				<div className="absolute top(542) left(13) hbox">
 
-					<Button kind="ghost" usrclass="clip p(13/26) font(11/16) c(#262626) text-center">이메일 가입</Button>
+					<Button kind="ghost" usrclass="clip p(13/26) font(11/16) text-center">이메일 가입</Button>
 
 					<div className="w(1) h(16) bg(#777)"></div>
 
-					<Button kind="ghost" usrclass="clip p(13/26) font(11/16) c(#262626) text-center">이메일 찾기</Button>
+					<Button kind="ghost" usrclass="clip p(13/26) font(11/16) text-center">이메일 찾기</Button>
 
 					<div className="w(1) h(16) bg(#777)"></div>
 
-					<Button kind="ghost" usrclass="clip p(13/26) font(11/16) c(#262626) text-center">비밀번호 찾기</Button>
+					<Button kind="ghost" usrclass="clip p(13/26) font(11/16) text-center">비밀번호 찾기</Button>
 
 				</div>
 				{/** </Login_group> */}
