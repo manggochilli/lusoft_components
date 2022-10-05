@@ -50,15 +50,15 @@ export const Button = ({
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'tertiary' ?
-		`bg(#fff) c(--color-primary) b(1) bc(--color-primary) ` +
+		`bg(#fff) c(--color-secondary) b(1) bc(--color-secondary) ` +
 		`pointer transition(.2s) ` +
-		`hover:bg(--color-primary) hover:c(#fff) hover:brightness(0.95) hover:elevation(4) ` +
+		`hover:bg(--color-secondary) hover:c(#fff) hover:b(0) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:b(0) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'ghost' ?
-		`bg(#fff) c(--color-primary) b(0) ` +
+		`bg(#fff) c(--color-secondary) b(0) ` +
 		`pointer transition(.2s) ` +
-		`hover:bg(#dfdfdf) hover:c(--color-primary) hover:brightness(0.95) hover:elevation(4) ` +
+		//`hover:bg(#dfdfdf) hover:c(--color-primary) hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'danger' ?
