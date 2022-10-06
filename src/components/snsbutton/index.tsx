@@ -8,40 +8,50 @@ type serviceStandard = {
 	fill_txt_color: string;
 	empty_bg_color: string;
 	empty_txt_color: string;
+	fill_border: string;
+	empty_border: string;
 	color_icon: string;
 	grey_icon: string;
 }
 
 const ServiceSet: Record<serviceName, serviceStandard> = {
 	naver: {
-		fill_bg_color: '#2cb400',
-		fill_txt_color: '#e00000',
-		empty_bg_color: '#fff',
-		empty_txt_color: '#fff',
+		fill_bg_color: 'bg(--sns-naver-color)',
+		fill_txt_color: 'c(--sns-naver-subcolor)',
+		fill_border: 'bc(--sns-naver-color) hover:bc(--sns-naver-color)',
+		empty_bg_color: 'bg(#fff)',
+		empty_txt_color: 'c(#000)',
+		empty_border: 'b(1) bc(#000) hover:b(1) hover:bc(#000) ',
 		color_icon: '',
 		grey_icon: '',
 	},
 	kakao: {
-		fill_bg_color: '#FEE500',
-		fill_txt_color: '#03166C',
-		empty_bg_color: '#fff',
-		empty_txt_color: '#000',
+		fill_bg_color: 'bg(--sns-kakao-color)',
+		fill_txt_color: 'c(--sns-kakao-subcolor)',
+		fill_border: 'bc(--sns-kakao-color) hover:bc(--sns-kakao-color)',
+		empty_bg_color: 'bg(#fff)',
+		empty_txt_color: 'c(#000)',
+		empty_border: 'b(1) bc(#000) hover:b(1) hover:bc(#000) ',
 		color_icon: '',
 		grey_icon: '',
 	},
 	google: {
-		fill_bg_color: '#fff',
-		fill_txt_color: '#000',
-		empty_bg_color: '#fff',
-		empty_txt_color: '#000',
+		fill_bg_color: 'bg(--sns-google-color)',
+		fill_txt_color: 'c(--sns-google-subcolor)',
+		fill_border: 'bc(--sns-google-color) hover:bc(--sns-google-color)',
+		empty_bg_color: 'bg(#fff)',
+		empty_txt_color: 'c(#000)',
+		empty_border: 'b(1) bc(#000) hover:b(1) hover:bc(#000) ',
 		color_icon: '',
 		grey_icon: '',
 	},
 	apple: {
-		fill_bg_color: '#000',
-		fill_txt_color: '#000',
-		empty_bg_color: '#fff',
-		empty_txt_color: '#000',
+		fill_bg_color: 'bg(--sns-apple-color)',
+		fill_txt_color: 'c(--sns-apple-subcolor)',
+		fill_border: 'bc(--sns-apple-color) hover:bc(--sns-apple-color)',
+		empty_bg_color: 'bg(#fff)',
+		empty_txt_color: 'c(#000)',
+		empty_border: 'b(1) bc(#000) hover:b(1) hover:bc(#000) ',
 		color_icon: '',
 		grey_icon: '',
 	}
@@ -57,7 +67,7 @@ interface SNSbuttonProps {
 	/**
 	 * 배경선택
 	 */
-	useFill: 'fill' | 'empty';
+	useFill?: 'fill' | 'empty';
 	/**
 	 * 크기
 	 */
@@ -96,11 +106,14 @@ export const SNSbutton = ({
 	...props
 }: SNSbuttonProps) => {
 	const service_color = useFill === 'fill' ?
-		`bg(${ServiceSet[service].fill_bg_color}) hover:bg(${ServiceSet[service].fill_bg_color}) ` +
-		`c(${ServiceSet[service].fill_txt_color}) hover:c(${ServiceSet[service].fill_txt_color}) `
+		`${ServiceSet[service].fill_bg_color} hover:${ServiceSet[service].fill_bg_color} ` +
+		`${ServiceSet[service].fill_txt_color} hover:${ServiceSet[service].fill_txt_color} ` +
+		`${ServiceSet[service].fill_border} `
 	:
-		`bg(` + ServiceSet[service].empty_bg_color + `) c(` + ServiceSet[service].empty_txt_color + `) hover:bg(` + ServiceSet[service].fill_bg_color + `) hover:c(` + ServiceSet[service].fill_txt_color + `) `;
+		`${ServiceSet[service].empty_bg_color} hover:${ServiceSet[service].empty_bg_color} ` +
+		`${ServiceSet[service].empty_txt_color} hover:${ServiceSet[service].empty_txt_color} ` +
+		`${ServiceSet[service].empty_border} `;
 	return (
-		<Button size={size} usrclass={[service_color, usrclass].join(' ')}>{[service_color].join(' ')}</Button>
+		<Button size={size} usrclass={[service_color, usrclass].join(' ')}>{usrText}</Button>
 	);
 };

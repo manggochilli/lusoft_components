@@ -23,4 +23,16 @@
 	*/
 	--bg-disabled: #E8E8E8;
 	--c-disabled: #9E9E9E;
+
+	/**
+	* SNS Color
+	*/
+	--sns-naver-color: #15BD66;
+	--sns-naver-subcolor: #fff;
+	--sns-kakao-color: #FEE500;
+	--sns-kakao-subcolor: #03166C;
+	--sns-google-color: #fff;
+	--sns-google-subcolor: #000;
+	--sns-apple-color: #000;
+	--sns-apple-subcolor: #fff;
 }
