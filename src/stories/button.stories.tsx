@@ -154,7 +154,7 @@ function clickme() {
 export const Click = () => {
 	return (
 		<div className='subbox gap(0/30)'>
-			<Button kind="secondary" size="lartge" onClick={clickme}>Click me!</Button>
+			<Button kind="secondary" size="large" onClick={clickme}>Click me!</Button>
 		</div>
 	)
 }
