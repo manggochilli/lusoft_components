@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../components/button";
-import { InputText } from "../components/InputText";
+import { InputText } from "../components/inputText";
 
 
 function TestComponent() {

@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { InputText } from '../components/InputText';
+import { InputText } from '../components/inputText';
 
 export default {
 	title: 'LUsoft Components/Components/input',
