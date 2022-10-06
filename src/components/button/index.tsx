@@ -20,7 +20,7 @@ interface ButtonProps {
 	/**
 	 * 버튼에 표시할 내용
 	 */
-	children: string;
+	children?: string;
 	/**
 	 * Optional click handler
 	 */
@@ -82,6 +82,7 @@ export const Button = ({
 	:
 		`bg(#fff) c(#000) b(1) bc(white) ` +
 		`pointer transition(.2s) ` +
+		`hover:b(1) hover:bc(white) ` +
 		`hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `;

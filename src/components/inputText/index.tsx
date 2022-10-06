@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '../icon';
 
 interface InputTextProps {
 	/**
@@ -44,12 +45,19 @@ export const InputText = ({
 	:
 		``;
 	return (
-		<input
-			type={type}
-			className={[kindclass, usrclass].join(' ')}
-			placeholder={placeholder}
-			{...props}
-			value={vals}
-		/>
+		<div className="relative hbox">
+			<input
+				type={type}
+				className={[kindclass, usrclass].join(' ')}
+				placeholder={placeholder}
+				{...props}
+				value={vals}
+			/>
+			<div className='absolute right(0)'>
+				<Icon iconName="eye_fill" size={14} color="#C8C8C8" />
+				<Icon iconName="eyeoff_fill" size={14} color="#C8C8C8" />
+				<Icon iconName="close_circle" size={14} color="#C8C8C8" />
+			</div>
+		</div>
 	);
 };

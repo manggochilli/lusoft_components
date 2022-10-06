@@ -1,12 +1,14 @@
 import React from "react";
 import { Button } from "../components/button";
 import { InputText } from "../components/inputText";
+import { Icon } from "../components/icon";
+import { SNSbutton } from "../components/snsbutton";
 
 
 function TestComponent() {
 	return (
 		<div className="pack w(100vw) p(20) bg(#000.5)">
-			<div className="relative w(360) h(800) bg(#fff) clip">
+			<div className="relative w(360) h(850) bg(#fff) clip">
 
 				{/** <Image_Area/> */}
 				<div className="absolute top(84) left(57) pack w(246) h(128) r(5)">
@@ -23,11 +25,11 @@ function TestComponent() {
 					<div className="hbox hgap(9.199999809265137) p(0/8/0/5)">
 
 						{/** <Search/> */}
-						<div className="relative w(24) h(24) clip b(1)">image</div>
+						<Icon iconName="search" size={24} color="#404040" />
 						{/** </Search> */}
 
 						{/** <Density_medium/> */}
-						<div className="relative w(24) h(24) clip b(1)">image</div>
+						<Icon iconName="menu" size={24} color="#404040" />
 						{/** </Density_medium> */}
 
 					</div>
@@ -68,9 +70,9 @@ function TestComponent() {
 
 				<Button kind="secondary" size="small" usrclass="absolute top(492) left(109) w(145) bg(#e8e8e8) font(14/20) c(#949494)">로그인</Button>
 
-				<Button kind="tertiary" usrclass="absolute top(624) left(5) hgap(99) p(0/0/0/8) w(350) h(42) r(8) b(#000.2) font(15/20) c(#262626) text-center">네이버로 로그인</Button>
+				<SNSbutton service="naver" useFill="fill" size="large" useIcon={false} iconPosition="left" usrText="네이버 ID로 로그인 - SNSbutton" usrclass="absolute top(600) left(5) w(350)" />
 
-				<Button kind="tertiary" usrclass="absolute top(674) left(5) hgap(99) p(0/0/0/8) w(350) h(42) r(8) b(#000.2) font(15/20) c(#262626) text-center">Apple로 로그인</Button>
+				<Button kind="tertiary" usrclass="absolute top(660) left(5) hpack gap(10) w(350) h(42) p(0) b(1) r(8) bg(#fff) font(15/20) c(#333) text-center"> 네이버 ID로 로그인 - Button</Button>
 
 				{/** <Login_group/> */}
 				<div className="absolute top(542) left(13) hbox">
