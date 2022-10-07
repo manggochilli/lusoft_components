@@ -12,26 +12,26 @@ type serviceStandard = {
 
 const ServiceSet: Record<serviceName, serviceStandard> = {
 	naver: {
-		fill_class: 'bg(--sns-naver-color) c(--sns-naver-subcolor) bc(--sns-naver-color) hover:bc(--sns-naver-color) ',
-		empty_class: 'bg(#fff) c(#000) b(1) bc(#000) hover:b(1) hover:bc(#000) ',
+		fill_class: 'bg(--sns-naver-color) c(--sns-naver-subcolor) b(.5) bc(--sns-naver-color) hover:b(.5) hover:bc(--sns-naver-color) ',
+		empty_class: 'bg(#fff) c(#000) b(.5) bc(#000.2) hover:b(.5) hover:bc(#000.2) ',
 		color_icon: '/image/icons/naver.png',
 		grey_icon: '',
 	},
 	kakao: {
-		fill_class: 'bg(--sns-kakao-color) c(--sns-kakao-subcolor) bc(--sns-kakao-color) hover:bc(--sns-kakao-color) ',
-		empty_class: 'bg(#fff) c(#000) b(1) bc(#000) hover:b(1) hover:bc(#000) ',
+		fill_class: 'bg(--sns-kakao-color) c(--sns-kakao-subcolor) b(.5) bc(--sns-kakao-color) hover:b(.5) hover:bc(--sns-kakao-color) ',
+		empty_class: 'bg(#fff) c(#000) b(.5) bc(#000.2) hover:b(.5) hover:bc(#000.2) ',
 		color_icon: '/image/icons/kakao.png',
 		grey_icon: '',
 	},
 	google: {
-		fill_class: 'bg(--sns-google-color) c(--sns-google-subcolor) bc(--sns-google-color) hover:bc(--sns-google-color)',
-		empty_class: 'bg(#fff) c(#000) b(1) bc(#000) hover:b(1) hover:bc(#000) ',
+		fill_class: 'bg(--sns-google-color) c(--sns-google-subcolor) b(.5) bc(--sns-google-color) hover:b(.5) hover:bc(--sns-google-color)',
+		empty_class: 'bg(#fff) c(#000) b(.5) bc(#000.2) hover:b(.5) hover:bc(#000.2) ',
 		color_icon: '/image/icons/google.png',
 		grey_icon: '',
 	},
 	apple: {
-		fill_class: 'bg(--sns-apple-color) c(--sns-apple-subcolor) bc(--sns-apple-color) hover:bc(--sns-apple-color)',
-		empty_class: 'bg(#fff) c(#000) b(1) bc(#000) hover:b(1) hover:bc(#000) ',
+		fill_class: 'bg(--sns-apple-color) c(--sns-apple-subcolor) b(.5) bc(--sns-apple-color) hover:b(.5) hover:bc(--sns-apple-color)',
+		empty_class: 'bg(#fff) c(#000) b(.5) bc(#000.2) hover:b(.5) hover:bc(#000.2) ',
 		color_icon: '/image/icons/apple.png',
 		grey_icon: '',
 	}
