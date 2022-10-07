@@ -51,7 +51,7 @@ export const InputText = ({
 				className={[kindclass, usrclass].join(' ')}
 				placeholder={placeholder}
 				{...props}
-				value={vals}
+				defaultValue={vals && vals}
 			/>
 			<div className='absolute right(0)'>
 				<Icon iconName="eye_fill" size={14} color="#C8C8C8" />
