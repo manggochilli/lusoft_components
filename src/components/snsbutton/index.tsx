@@ -55,7 +55,7 @@ interface SNSbuttonProps {
 	/**
 	 * 아이콘위치
 	 */
-	iconPosition?: 'none' | 'left' | 'text_left' | 'center' | 'text_right' | 'right';
+	iconPosition?: 'none' | 'left' | 'text_left' | 'center' | 'right';
 	/**
 	 * 함게 표기할 문구
 	 */

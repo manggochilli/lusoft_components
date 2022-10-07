@@ -134,13 +134,26 @@ export const Button = ({
 	switch( iconPosition[2] ) {
 		case 'left':
 			iconAddclass = "absolute left(5)";
-			btnaAdclass = `w(100%) pl(0) text-center`;
+			btnaAdclass = `hpack w(100%) pl(0) text-center`;
+			break;
+		case 'text_left':
+			iconAddclass = "";
+			btnaAdclass = `hpack gap(5) w(100%) pl(0) text-center`;
+			break;
+		case 'center':
+			iconAddclass = "";
+			btnaAdclass = `hpack gap(5) w(100%) pl(0) text-center`;
+			children = '';
+			break;
+		case 'right':
+			iconAddclass = "absolute right(5)";
+			btnaAdclass = `hpack w(100%) pl(0) text-center`;
 			break;
 	}
 	const iconItem = iconPosition[0] === 'image' ?
 		<img src={iconPosition[1]} className={[imgsize, iconAddclass].join(' ')} />
 	: iconPosition[0] === 'svg' ?
-		<Icon iconName={iconPosition[1]} size={iconsize} />
+		<Icon iconName={iconPosition[1]} size={iconsize} color={iconPosition[3]} usrclass={iconPosition[4]} />
 	: '';
 	return (
 		<button

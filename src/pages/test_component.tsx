@@ -72,11 +72,11 @@ function TestComponent() {
 
 				<SNSbutton service="naver" size="large" iconPosition="left" usrText="네이버 ID로 로그인" usrclass="absolute top(600) left(5) w(350)" />
 
-				<SNSbutton service="kakao" size="large" iconPosition="left" usrText="카카오 ID로 로그인" usrclass="absolute top(660) left(5) w(350)" />
+				<SNSbutton service="kakao" size="large" iconPosition="text_left" usrText="카카오 ID로 로그인" usrclass="absolute top(660) left(5) w(350)" />
 
-				<SNSbutton service="google" size="large" iconPosition="left" usrText="Google ID로 로그인" usrclass="absolute top(720) left(5) w(350)" />
+				<SNSbutton service="google" size="large" iconPosition="center" usrText="Google ID로 로그인" usrclass="absolute top(720) left(5) w(350)" />
 
-				<SNSbutton service="apple" size="large" useFill="fill" iconPosition="left" usrText="Apple ID로 로그인" usrclass="absolute top(780) left(5) w(350)" />
+				<SNSbutton service="apple" size="large" useFill="fill" iconPosition="right" usrText="Apple ID로 로그인" usrclass="absolute top(780) left(5) w(350)" />
 
 				{/** <Login_group/> */}
 				<div className="absolute top(542) left(13) hbox">
