@@ -70,13 +70,13 @@ function TestComponent() {
 
 				<Button kind="secondary" size="small" usrclass="absolute top(492) left(109) w(145) bg(#e8e8e8) font(14/20) c(#949494)">로그인</Button>
 
-				<SNSbutton service="naver" useFill="fill" size="large" useIcon={false} iconPosition="left" usrText="네이버 ID로 로그인 - SNSbutton" usrclass="absolute top(600) left(5) w(350)" />
+				<SNSbutton service="naver" size="large" usrText="네이버 ID로 로그인" usrclass="absolute top(600) left(5) w(350)" />
 
-				<SNSbutton service="kakao" useFill="fill" size="large" useIcon={false} iconPosition="left" usrText="카카오 ID로 로그인 - SNSbutton" usrclass="absolute top(660) left(5) w(350)" />
+				<SNSbutton service="kakao" size="large" usrText="카카오 ID로 로그인" usrclass="absolute top(660) left(5) w(350)" />
 
-				<SNSbutton service="google" size="large" useIcon={false} iconPosition="left" usrText="Google ID로 로그인 - SNSbutton" usrclass="absolute top(720) left(5) w(350)" />
+				<SNSbutton service="google" size="large" usrText="Google ID로 로그인" usrclass="absolute top(720) left(5) w(350)" />
 
-				<SNSbutton service="apple" size="large" useIcon={false} iconPosition="left" usrText="Apple ID로 로그인 - SNSbutton" usrclass="absolute top(780) left(5) w(350)" />
+				<SNSbutton service="apple" size="large" usrText="Apple ID로 로그인" usrclass="absolute top(780) left(5) w(350)" />
 
 				{/** <Login_group/> */}
 				<div className="absolute top(542) left(13) hbox">
