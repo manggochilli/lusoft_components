@@ -1,4 +1,5 @@
 import React from 'react';
+import { Icon } from '../icon';
 
 interface ButtonProps {
 	/**
@@ -9,6 +10,10 @@ interface ButtonProps {
 	 * 크기 설정
 	 */
 	size?: '' | 'small' | 'medium' | 'large' | 'expressive' | 'extralarge';
+	/**
+	 * 아이콘
+	 */
+	addicon?: any;
 	/**
 	 * 사용자 추가 클래스
 	 */
@@ -33,6 +38,7 @@ interface ButtonProps {
 export const Button = ({
 	kind,
 	size = 'large',
+	addicon = 'none',
 	usrclass,
 	children,
 	...props
@@ -98,13 +104,52 @@ export const Button = ({
 		`h(66) p(2) r(8) font(14) 400 `
 	:
 		`p(7) r(7) font(15) regular `;
+	const imgsize = size === 'small' ?
+		`w(24) h(24) `
+	: size === 'medium' ?
+		`w(26) h(26) `
+	: size === 'large' ?
+		`w(28) h(28) `
+	: size === 'expressive' ?
+		`w(26) h(26) `
+	: size === 'extralarge' ?
+		`w(30) h(30) `
+	:
+		`w(30) h(30) `
+	const iconsize = size === 'small' ?
+		24
+	: size === 'medium' ?
+		26
+	: size === 'large' ?
+		28
+	: size === 'expressive' ?
+		26
+	: size === 'extralarge' ?
+		30
+	:
+		30
+	let iconPosition = addicon.split('|');
+	let iconAddclass = '';
+	let btnaAdclass = '';
+	switch( iconPosition[2] ) {
+		case 'left':
+			iconAddclass = "absolute left(5)";
+			btnaAdclass = `w(100%) pl(0) text-center`;
+			break;
+	}
+	const iconItem = iconPosition[0] === 'image' ?
+		<img src={iconPosition[1]} className={[imgsize, iconAddclass].join(' ')} />
+	: iconPosition[0] === 'svg' ?
+		<Icon iconName={iconPosition[1]} size={iconsize} />
+	: '';
 	return (
 		<button
 			type="button"
-			className={[kindclass, sizeclass, usrclass].join(' ')}
-			{...props}
+			className={[kindclass, btnaAdclass, sizeclass, usrclass].join(' ')}
+		{...props}
 		>
-		{children}
+			{iconItem}
+			{children}
 		</button>
 	);
 };
