@@ -18,7 +18,7 @@ function TestComponent() {
 	const SendLogin = (event: React.FormEvent) => {
 		event.preventDefault();
 		setDisabled( true );
-		console.log( 'click' );
+		alert('서버와 통신을 준비중입니다.');
 	}
 
 	return (
