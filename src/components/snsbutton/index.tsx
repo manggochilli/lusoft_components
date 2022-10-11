@@ -86,6 +86,6 @@ export const SNSbutton = ({
 		ServiceSet[service].empty_class
 	const addicon = iconPosition != 'none' ? 'image|'+ServiceSet[service].color_icon+'|'+iconPosition : 'none';
 	return (
-		<Button size={size} usrclass={[service_color, usrclass].join(' ')} addicon={addicon}>{usrText}</Button>
+		<Button kind="tertiary-ghost" size={size} usrclass={[service_color, usrclass].join(' ')} addicon={addicon}>{usrText}</Button>
 	);
 };

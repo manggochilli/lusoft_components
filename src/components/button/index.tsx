@@ -2,10 +2,11 @@ import React from 'react';
 import { Icon } from '../icon';
 
 interface ButtonProps {
+	type?: any,
 	/**
 	 * 셋업된 분류
 	 */
-	kind?: '' | 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger' | 'danger--tertiary' | 'danger--ghost';
+	kind?: '' | 'primary' | 'secondary' | 'tertiary' | 'tertiary-ghost' | 'ghost' | 'danger' | 'danger--tertiary' | 'danger--ghost';
 	/**
 	 * 크기 설정
 	 */
@@ -36,6 +37,7 @@ interface ButtonProps {
  *  버튼 엘리먼트 정의
  */
 export const Button = ({
+	type,
 	kind,
 	size = 'large',
 	addicon = 'none',
@@ -43,6 +45,7 @@ export const Button = ({
 	children,
 	...props
 }: ButtonProps) => {
+	const btn_type = type ? type : 'button';
 	const kindclass = kind === 'primary' ?
 		`bg(--color-primary) c(#fff) b(0) ` +
 		`pointer transition(.2s) ` +
@@ -61,11 +64,17 @@ export const Button = ({
 		`hover:bg(--color-secondary) hover:c(#fff) hover:b(0) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:b(0) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
+	: kind === 'tertiary-ghost' ?
+		`bg(#fff) c(--color-secondary) b(1) bc(--color-secondary) ` +
+		`pointer transition(.2s) ` +
+		//`hover:bg(#fff) hover:c(--color-secondary) hover:b(1) hover:bc(#fff) hover:elevation(4) ` +
+		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
+		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:b(0) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'ghost' ?
 		`bg(#fff) c(--color-secondary) b(0) ` +
 		`pointer transition(.2s) ` +
 		//`hover:bg(#dfdfdf) hover:c(--color-primary) hover:brightness(0.95) hover:elevation(4) ` +
-		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
+		//`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'danger' ?
 		`bg(--color-danger) c(#fff) b(0) ` +
@@ -86,9 +95,9 @@ export const Button = ({
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	:
-		`bg(#fff) c(#000) b(1) bc(white) ` +
+		`bg(transparent) c(#000) b(1) bc(#ccc) ` +
 		`pointer transition(.2s) ` +
-		`hover:b(1) hover:bc(white) ` +
+		`hover:b(0) ` +
 		`hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `;
@@ -157,7 +166,7 @@ export const Button = ({
 	: '';
 	return (
 		<button
-			type="button"
+			type={btn_type}
 			className={[kindclass, btnaAdclass, sizeclass, usrclass].join(' ')}
 		{...props}
 		>

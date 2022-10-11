@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '../button';
 
-interface InputTextProps {
+interface InputPassProps {
 	/**
 	 * name
 	 */
@@ -22,10 +22,10 @@ interface InputTextProps {
 	 * placeholder
 	 */
 	 placeholder?: string;
-	/**
-	 * required
-	 */
-	 required?: boolean,
+	 /**
+	  * required
+	  */
+	  required?: boolean,
 	/**
 	 * 값
 	 */
@@ -36,7 +36,7 @@ interface InputTextProps {
 	onChange?: () => void;
 }
 
-export const InputText = ({
+export const InputPass = ({
 	name,
 	maxlength,
 	kind,
@@ -45,7 +45,7 @@ export const InputText = ({
 	required,
 	vals,
 	...props
-}: InputTextProps) => {
+}: InputPassProps) => {
 	const kindclass = kind === 'box' ?
 		`b(1) `
 	: kind === 'underline' ?
@@ -54,6 +54,10 @@ export const InputText = ({
 		`b(0) `
 	:
 		``;
+	const [ type , setType ] = useState( 'password' );
+	const [ iconEyes , setIconEyes ] = useState( 'none' );
+	const [ iconEye , setIconEye ] = useState( 'show' );
+	const [ iconEyeOff , setIconEyeOff ] = useState( 'none' );
 	const [ iconClose , setIconClose ] = useState( vals ? 'show' : 'none' );
 	const [ valsText , setValsText ] = useState( vals ? vals : '' );
 	const reSetVal = ( event: React.ChangeEvent<HTMLInputElement> ) => {
@@ -61,14 +65,16 @@ export const InputText = ({
 		let check_len = event.target.value.length;
 		if( check_len > 0 ) {
 			setIconClose('show');
+			setIconEyes('show');
 		} else {
 			setIconClose('none');
+			setIconEyes('none');
 		}
 	}
 	return (
-		<div className="relative hbox">
+		<span className="relative hbox">
 			<input
-				type="text"
+				type={type}
 				name={name}
 				maxLength={maxlength}
 				className={[kindclass, usrclass].join(' ')}
@@ -79,7 +85,11 @@ export const InputText = ({
 				{...props}
 				onChange={reSetVal}
 			/>
-			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose}`} onClick={() => { setValsText(''); setIconClose('none'); }} />
-		</div>
+			<span className={`hbox ${iconEyes}`}>
+				<Button kind="ghost" addicon="svg|eye_fill||#C8C8C8" size="small" usrclass={`absolute right(35) bg(transparent) ${iconEye}`} onClick={() => { setIconEye('none'); setIconEyeOff('show'); setType('text'); }} />
+				<Button kind="ghost" addicon="svg|eyeoff_fill||#C8C8C8" size="small" usrclass={`absolute right(35) bg(transparent) ${iconEyeOff}`} onClick={() => { setIconEye('show'); setIconEyeOff('none'); setType('password'); }} />
+			</span>
+			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose}`} onClick={() => { setValsText(''); setIconClose('none'); setIconEyes('none'); }} />
+		</span>
 	);
 };

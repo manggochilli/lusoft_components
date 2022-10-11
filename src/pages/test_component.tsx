@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import LogoBig from "../image/base/logo.png";
@@ -7,14 +7,23 @@ import LogoSmall from "../image/base/logo_small.png";
 // components
 import { Button } from "../components/button";
 import { InputText } from "../components/inputText";
+import { InputPass } from "../components/inputPass";
 import { Icon } from "../components/icon";
 import { SNSbutton } from "../components/snsbutton";
 
-
 function TestComponent() {
+	const [ disabled , setDisabled ] = useState( false );
+
+	// 로그인 버튼 처리
+	const SendLogin = (event: React.FormEvent) => {
+		event.preventDefault();
+		setDisabled( true );
+		console.log( 'click' );
+	}
+
 	return (
 		<div className="pack w(100vw) p(20) bg(#000.5)">
-			<div className="relative w(360) h(850) bg(#fff) clip">
+			<form name="form_login" className="relative w(360) h(850) bg(#fff) clip" onSubmit={SendLogin}>
 
 				{/** <Top_navigation/> */}
 				<div className="absolute top(0) left(0) hbox hgap(222) p(10/0/0/8)">
@@ -44,7 +53,7 @@ function TestComponent() {
 					<div className="vbox vgap(4)">
 						<div className="vbox vgap(8)">
 							<div className="w(300) font(12/18) c(#525252)">이메일 주소</div>
-							<InputText type="text" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="예) kream@kream.co.kr" />
+							<InputText name="usr_email" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="예) kream@kream.co.kr" required={true} />
 						</div>
 						<div className="none w(300) font(12/18) c(#c9162b)">이메일 주소를 정확히 입력해주세요.</div>
 					</div>
@@ -60,7 +69,7 @@ function TestComponent() {
 					<div className="vbox">
 						<div className="vbox vgap(8)">
 							<div className="w(300) font(12/18) c(#525252)">비밀번호</div>
-							<InputText type="password" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="비밀번호" />
+							<InputPass name="usr_pass" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="비밀번호" required={true} />
 						</div>
 					</div>
 					{/** </_Text_input_base> */}
@@ -68,7 +77,7 @@ function TestComponent() {
 				</div>
 				{/** </Text_input> */}
 
-				<Button kind="secondary" size="small" usrclass="absolute top(490) left(109) w(145) bg(#e8e8e8) font(14/20) c(#949494)">로그인</Button>
+				<Button type="submit" kind="secondary" size="small" usrclass="absolute top(490) left(109) w(145) bg(#e8e8e8) font(14/20) c(#949494)" disabled={disabled}>로그인</Button>
 
 				{/** <Login_group/> */}
 				<div className="absolute top(540) left(13) hbox">
@@ -94,7 +103,7 @@ function TestComponent() {
 
 				<SNSbutton service="apple" size="medium" useFill="fill" iconPosition="left" usrText="Apple ID로 로그인" usrclass="absolute top(770) left(5) w(350)" />
 
-			</div>
+			</form>
 		</div>
 	)
 }
