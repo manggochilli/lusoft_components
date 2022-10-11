@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 import LogoBig from "../image/base/logo.png";
 import LogoSmall from "../image/base/logo_small.png";
@@ -14,11 +15,14 @@ import { SNSbutton } from "../components/snsbutton";
 function TestComponent() {
 	const [ disabled , setDisabled ] = useState( false );
 
+	const [ usr_email , setUserEmail ] = useState('');
+
 	// 로그인 버튼 처리
 	const SendLogin = (event: React.FormEvent) => {
 		event.preventDefault();
 		setDisabled( true );
-		alert('서버와 통신을 준비중입니다.');
+
+		console.log( 'check val : ' + usr_email );
 	}
 
 	return (
@@ -53,7 +57,7 @@ function TestComponent() {
 					<div className="vbox vgap(4)">
 						<div className="vbox vgap(8)">
 							<div className="w(300) font(12/18) c(#525252)">이메일 주소</div>
-							<InputText name="usr_email" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="예) kream@kream.co.kr" required={true} />
+							<InputText name="usr_email" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="예) kream@kream.co.kr" required={true} vals={usr_email} />
 						</div>
 						<div className="none w(300) font(12/18) c(#c9162b)">이메일 주소를 정확히 입력해주세요.</div>
 					</div>

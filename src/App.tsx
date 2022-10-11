@@ -19,7 +19,7 @@ function App() {
 			<BrowserRouter>
 				<PageHeader />
 				<Routes>
-					<Route index element={<PageIndex />} />
+					<Route index element={<PageTestComponent />} />
 					<Route path="/test/handshake" element={<PageTestHandshake />} />
 					<Route path="/test/component" element={<PageTestComponent />} />
 					<Route path="/component/Button" element={<PageButtons />} />

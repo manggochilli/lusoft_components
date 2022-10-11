@@ -12,6 +12,7 @@
     "chromatic": "npx chromatic --project-token=51f76f0d0d0d"
   },
   "dependencies": {
+    "axios": "^1.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.1"
