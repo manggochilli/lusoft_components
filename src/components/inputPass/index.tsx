@@ -33,7 +33,7 @@ interface InputPassProps {
 	/**
 	 * onchange event
 	 */
-	onChange?: () => void;
+	_onChange?: any
 }
 
 export const InputPass = ({
@@ -44,6 +44,7 @@ export const InputPass = ({
 	placeholder,
 	required,
 	vals,
+	_onChange,
 	...props
 }: InputPassProps) => {
 	const kindclass = kind === 'box' ?
@@ -60,16 +61,11 @@ export const InputPass = ({
 	const [ iconEyeOff , setIconEyeOff ] = useState( 'none' );
 	const [ iconClose , setIconClose ] = useState( vals ? 'show' : 'none' );
 	const [ valsText , setValsText ] = useState( vals ? vals : '' );
-	const reSetVal = ( event: React.ChangeEvent<HTMLInputElement> ) => {
-		setValsText( event.target.value );
-		let check_len = event.target.value.length;
-		if( check_len > 0 ) {
-			setIconClose('show');
-			setIconEyes('show');
-		} else {
-			setIconClose('none');
-			setIconEyes('none');
-		}
+	const closeArea = () => {
+		setValsText('');
+		setIconClose('none');
+		setIconEyes('none');
+		setType('password');
 	}
 	return (
 		<span className="relative hbox">
@@ -83,13 +79,26 @@ export const InputPass = ({
 				value={valsText}
 				readOnly={false}
 				{...props}
-				onChange={reSetVal}
+				onChange={ ( event: React.ChangeEvent<HTMLInputElement> ) => {
+					setValsText( event.target.value );
+					let check_len = event.target.value.length;
+					if( check_len > 0 ) {
+						setIconClose('show');
+						setIconEyes('show');
+					} else {
+						setIconClose('none');
+						setIconEyes('none');
+					}
+					if( _onChange ) {
+						_onChange(event.target.value);
+					}
+				} }
 			/>
 			<span className={`hbox ${iconEyes}`}>
 				<Button kind="ghost" addicon="svg|eye_fill||#C8C8C8" size="small" usrclass={`absolute right(35) bg(transparent) ${iconEye}`} onClick={() => { setIconEye('none'); setIconEyeOff('show'); setType('text'); }} />
 				<Button kind="ghost" addicon="svg|eyeoff_fill||#C8C8C8" size="small" usrclass={`absolute right(35) bg(transparent) ${iconEyeOff}`} onClick={() => { setIconEye('show'); setIconEyeOff('none'); setType('password'); }} />
 			</span>
-			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose}`} onClick={() => { setValsText(''); setIconClose('none'); setIconEyes('none'); }} />
+			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose}`} onClick={closeArea} />
 		</span>
 	);
 };

@@ -33,7 +33,7 @@ interface InputTextProps {
 	/**
 	 * onchange event
 	 */
-	onChange?: () => void;
+	_onChange?: any
 }
 
 export const InputText = ({
@@ -44,6 +44,7 @@ export const InputText = ({
 	placeholder,
 	required,
 	vals,
+	_onChange,
 	...props
 }: InputTextProps) => {
 	const kindclass = kind === 'box' ?
@@ -56,7 +57,7 @@ export const InputText = ({
 		``;
 	const [ iconClose , setIconClose ] = useState( vals ? 'show' : 'none' );
 	const [ valsText , setValsText ] = useState( vals ? vals : '' );
-	const reSetVal = ( event: React.ChangeEvent<HTMLInputElement> ) => {
+	function reSetVal( event: React.ChangeEvent<HTMLInputElement> ) {
 		setValsText( event.target.value );
 		let check_len = event.target.value.length;
 		if( check_len > 0 ) {
@@ -77,9 +78,20 @@ export const InputText = ({
 				value={valsText}
 				readOnly={false}
 				{...props}
-				onChange={reSetVal}
+				onChange={ ( event: React.ChangeEvent<HTMLInputElement> ) => {
+					setValsText( event.target.value );
+					let check_len = event.target.value.length;
+					if( check_len > 0 ) {
+						setIconClose('show');
+					} else {
+						setIconClose('none');
+					}
+					if( _onChange ) {
+						_onChange(event.target.value);
+					}
+				} }
 			/>
-			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose}`} onClick={() => { setValsText(''); setIconClose('none'); }} />
+			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose}`} onClick={() => { setValsText(''); _onChange(''); setIconClose('none'); }} />
 		</div>
 	);
 };

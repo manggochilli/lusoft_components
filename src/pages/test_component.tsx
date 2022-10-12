@@ -6,29 +6,31 @@ import LogoBig from "../image/base/logo.png";
 import LogoSmall from "../image/base/logo_small.png";
 
 // components
-import { Button } from "../components/button";
-import { InputText } from "../components/inputText";
-import { InputPass } from "../components/inputPass";
-import { Icon } from "../components/icon";
-import { SNSbutton } from "../components/snsbutton";
+import { Icon, Button, SNSbutton, InputText, InputPass } from "../components/index";
 
 function TestComponent() {
 	const [ disabled , setDisabled ] = useState( false );
 
-	const [ usr_email , setUserEmail ] = useState('');
+	const [ usrEmail , setUsrEmail ] = useState('');
+	const [ usrPass , setUsrPass ] = useState('');
 
 	// 로그인 버튼 처리
-	const SendLogin = (event: React.FormEvent) => {
+	const SendLogin = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		setDisabled( true );
+		//setDisabled( true );
 
-		console.log( 'check val : ' + usr_email );
+		var formData = new FormData();
+		formData.append('usrEmail',usrEmail);
+		formData.append('usrPass',usrPass);
+
+		for( let key of formData.keys() ) {
+			console.log( `${key}: ${formData.get(key)}` );
+		}
 	}
 
 	return (
 		<div className="pack w(100vw) p(20) bg(#000.5)">
 			<form name="form_login" className="relative w(360) h(850) bg(#fff) clip" onSubmit={SendLogin}>
-
 				{/** <Top_navigation/> */}
 				<div className="absolute top(0) left(0) hbox hgap(222) p(10/0/0/8)">
 					<img src={LogoSmall} className="vbox w(60) h(24)" />
@@ -57,7 +59,7 @@ function TestComponent() {
 					<div className="vbox vgap(4)">
 						<div className="vbox vgap(8)">
 							<div className="w(300) font(12/18) c(#525252)">이메일 주소</div>
-							<InputText name="usr_email" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="예) kream@kream.co.kr" required={true} vals={usr_email} />
+							<InputText name="usr_email" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="예) kream@kream.co.kr" required={true} vals={usrEmail} _onChange={ ( return_val:string ) => { setUsrEmail(return_val); } } />
 						</div>
 						<div className="none w(300) font(12/18) c(#c9162b)">이메일 주소를 정확히 입력해주세요.</div>
 					</div>
@@ -73,7 +75,7 @@ function TestComponent() {
 					<div className="vbox">
 						<div className="vbox vgap(8)">
 							<div className="w(300) font(12/18) c(#525252)">비밀번호</div>
-							<InputPass name="usr_pass" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="비밀번호" required={true} />
+							<InputPass name="usr_pass" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="비밀번호" required={true} vals={usrPass} _onChange={ ( return_val:string ) => { setUsrPass(return_val) } } />
 						</div>
 					</div>
 					{/** </_Text_input_base> */}
