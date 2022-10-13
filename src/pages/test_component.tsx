@@ -81,7 +81,7 @@ function TestComponent() {
 			setScriptPass('');
 			if( response.data.result === 'success' ) {
 				alert('로그인 성공(test)');
-				alert('페이지 이동(실행하지 않습니다.');
+				alert('페이지 이동(실행하지 않습니다.)');
 			} else if( response.data.result === 'error' ) {
 				alert('로그인 실패(test)');
 				alert(response.data.result_code);
@@ -132,6 +132,7 @@ function TestComponent() {
 					<option value="/api/test3.json">이메일형식</option>
 					<option value="/api/test4.json">아이디또는비밀번호불일치</option>
 					<option value="/api/test5.json">차단</option>
+					<option value="/api/test.json">확인:로그인성공</option>
 				</select>
 				{/** </Image_Area> */}
 
