@@ -10,6 +10,8 @@ import { Icon, Button, SNSbutton, InputText, InputPass } from "../components/ind
 
 function TestComponent() {
 
+	// 로그인 테스트용
+	const [ testFile , setTestFile ] = useState( '/api/test.json' );
 	// 폼 유효성검사
 	const [ chkForm , setChkForm ] = useState( false );
 
@@ -22,6 +24,7 @@ function TestComponent() {
 
 	// 상태메세지 - 이메일
 	const [ scriptEmail , setScriptEmail ] = useState( '이메일주소를 입력하세요' );
+
 	// 상태메세지 - 비밀번호
 	const [ scriptPass , setScriptPass ] = useState( '' );
 
@@ -70,15 +73,35 @@ function TestComponent() {
 
 		// 전송
 		alert('전송 click - 작동하지 않습니다.');
-		/*
-		axios.post( "https://manggochilli.cafe24.com/api/test.php" , formData)
+
+		axios.post( testFile , formData)
 		.then( function ( response ) {
-			console.log( response );
+			//console.log( response );
+			setScriptEmail('');
+			setScriptPass('');
+			if( response.data.result === 'success' ) {
+				alert('로그인 성공(test)');
+				alert('페이지 이동(실행하지 않습니다.');
+			} else if( response.data.result === 'error' ) {
+				alert('로그인 실패(test)');
+				alert(response.data.result_code);
+				switch( response.data.result_code ) {
+					case 1 : case 3 :
+						setScriptEmail( response.data.result_text );
+						break;
+					case 2 :
+						setScriptPass( response.data.result_text );
+						break;
+					case 4 : case 5 :
+						alert( response.data.result_text );
+						break;
+				}
+				setDisabled( false );
+			}
 		} )
 		.catch( function ( error ) {
 			console.log( error );
 		} )
-		*/
 	}
 
 	return (
@@ -103,6 +126,13 @@ function TestComponent() {
 
 				{/** <Image_Area/> */}
 				<img src={LogoBig} className="absolute top(84) left(57) pack w(246) h(128) r(5)" />
+				<select className="absolute top(200)" onChange={ (event) => { setTestFile(event.target.value); } }>
+					<option value="/api/test1.json">이메일</option>
+					<option value="/api/test2.json">비밀번호</option>
+					<option value="/api/test3.json">이메일형식</option>
+					<option value="/api/test4.json">아이디또는비밀번호불일치</option>
+					<option value="/api/test5.json">차단</option>
+				</select>
 				{/** </Image_Area> */}
 
 				{/** <Text_input/> */}
