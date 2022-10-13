@@ -72,19 +72,18 @@ function TestComponent() {
 
 
 		// 전송
-		alert('전송 click - 작동하지 않습니다.');
-
+		console.log('전송 click - 작동하지 않습니다.');
 		axios.post( testFile , formData)
 		.then( function ( response ) {
 			//console.log( response );
 			setScriptEmail('');
 			setScriptPass('');
 			if( response.data.result === 'success' ) {
-				alert('로그인 성공(test)');
-				alert('페이지 이동(실행하지 않습니다.)');
+				alert('로그인 성공');
+				console.log('페이지 이동(실행하지 않습니다.)');
 			} else if( response.data.result === 'error' ) {
-				alert('로그인 실패(test)');
-				alert(response.data.result_code);
+				console.log('로그인 실패(test)');
+				console.log(response.data.result_code);
 				switch( response.data.result_code ) {
 					case 1 : case 3 :
 						setScriptEmail( response.data.result_text );
