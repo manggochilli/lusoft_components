@@ -90,6 +90,11 @@ export const InputText = ({
 						_onChange(event.target.value);
 					}
 				} }
+				onPaste={ ( event: React.ClipboardEvent<HTMLInputElement> ) => {
+					if( _onChange ) {
+						_onChange(event.clipboardData.getData('text'));
+					}
+				} }
 			/>
 			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose}`} onClick={() => { setValsText(''); _onChange(''); setIconClose('none'); }} />
 		</div>

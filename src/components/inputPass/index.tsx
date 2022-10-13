@@ -93,6 +93,11 @@ export const InputPass = ({
 						_onChange(event.target.value);
 					}
 				} }
+				onPaste={ ( event: React.ClipboardEvent<HTMLInputElement> ) => {
+					if( _onChange ) {
+						_onChange(event.clipboardData.getData('text'));
+					}
+				} }
 			/>
 			<span className={`hbox ${iconEyes}`}>
 				<Button kind="ghost" addicon="svg|eye_fill||#C8C8C8" size="small" usrclass={`absolute right(35) bg(transparent) ${iconEye}`} onClick={() => { setIconEye('none'); setIconEyeOff('show'); setType('text'); }} />

@@ -9,23 +9,76 @@ import LogoSmall from "../image/base/logo_small.png";
 import { Icon, Button, SNSbutton, InputText, InputPass } from "../components/index";
 
 function TestComponent() {
-	const [ disabled , setDisabled ] = useState( false );
 
+	// 폼 유효성검사
+	const [ chkForm , setChkForm ] = useState( false );
+
+	// 로그인 버튼 disabled 처리
+	const [ disabled , setDisabled ] = useState( true );
+
+	// 로그인 페이지에서 입력받아서 전송할 항목
 	const [ usrEmail , setUsrEmail ] = useState('');
 	const [ usrPass , setUsrPass ] = useState('');
 
+	// 상태메세지 - 이메일
+	const [ scriptEmail , setScriptEmail ] = useState( '이메일주소를 입력하세요' );
+	// 상태메세지 - 비밀번호
+	const [ scriptPass , setScriptPass ] = useState( '' );
+
+	function checkEmail() {
+		let emailTerm = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i
+		if( usrEmail.length < 6 ) {
+			setScriptEmail( '이메일주소를 입력하세요' );
+			setChkForm( false );
+		} else if( !emailTerm.test( usrEmail ) ) {
+			setScriptEmail( '이메일 형식이 아닙니다.' );
+			setDisabled( true );
+			setChkForm( false );
+		} else {
+			setScriptEmail( '' );
+			setDisabled( false );
+			setChkForm( true );
+		}
+	}
+
 	// 로그인 버튼 처리
 	const SendLogin = (event: React.FormEvent<HTMLFormElement>) => {
+		// 중복 실행 방지
 		event.preventDefault();
-		//setDisabled( true );
+		setDisabled( true ); // 전송 버튼 비활성화 시켜서 중복 실행 방지\
 
+		if( usrPass.length < 4 ) {
+			setScriptPass( '비밀번호를 확인해주세요' );
+			setDisabled( false );
+			return false;
+		} else {
+			setScriptPass( '' );
+			setDisabled( true );
+		}
+
+		// 입력값을 취합
 		var formData = new FormData();
 		formData.append('usrEmail',usrEmail);
 		formData.append('usrPass',usrPass);
 
+
+		// formData 확인
 		for( let key of formData.keys() ) {
 			console.log( `${key}: ${formData.get(key)}` );
 		}
+
+
+		// 전송
+		alert('전송 click - 작동하지 않습니다.');
+		/*
+		axios.post( "https://manggochilli.cafe24.com/api/test.php" , formData)
+		.then( function ( response ) {
+			console.log( response );
+		} )
+		.catch( function ( error ) {
+			console.log( error );
+		} )
+		*/
 	}
 
 	return (
@@ -59,9 +112,9 @@ function TestComponent() {
 					<div className="vbox vgap(4)">
 						<div className="vbox vgap(8)">
 							<div className="w(300) font(12/18) c(#525252)">이메일 주소</div>
-							<InputText name="usr_email" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="예) kream@kream.co.kr" required={true} vals={usrEmail} _onChange={ ( return_val:string ) => { setUsrEmail(return_val); } } />
+							<InputText name="usr_email" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="예) kream@kream.co.kr" required={true} vals={usrEmail} _onChange={ ( return_val:string ) => { setUsrEmail(return_val); checkEmail(); } } />
 						</div>
-						<div className="none w(300) font(12/18) c(#c9162b)">이메일 주소를 정확히 입력해주세요.</div>
+						<div className="w(300) font(12/18) c(#c9162b)">{scriptEmail}</div>
 					</div>
 					{/** </_Text_input_base> */}
 
@@ -75,8 +128,9 @@ function TestComponent() {
 					<div className="vbox">
 						<div className="vbox vgap(8)">
 							<div className="w(300) font(12/18) c(#525252)">비밀번호</div>
-							<InputPass name="usr_pass" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="비밀번호" required={true} vals={usrPass} _onChange={ ( return_val:string ) => { setUsrPass(return_val) } } />
+							<InputPass name="usr_pass" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="비밀번호" required={true} vals={usrPass} _onChange={ ( return_val:string ) => { setUsrPass(return_val); } } />
 						</div>
+						<div className="w(300) font(12/18) c(#c9162b)">{scriptPass}</div>
 					</div>
 					{/** </_Text_input_base> */}
 
