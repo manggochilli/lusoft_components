@@ -1,6 +1,6 @@
 import React from "react";
 
-export type iconName = 'menu' | 'search' | 'close_circle' | 'eye_fill' | 'eyeoff_fill';
+export type iconName = 'menu' | 'close' | 'search' | 'close_circle' | 'eye_fill' | 'eyeoff_fill';
 
 type iconType = {
 	path: string;
@@ -10,6 +10,10 @@ type iconType = {
 const IconSet: Record<iconName, iconType> = {
 	menu: {
 		path: `M4 5H20C20.55 5 21 4.55 21 4C21 3.45 20.55 3 20 3H4C3.45 3 3 3.45 3 4C3 4.55 3.45 5 4 5Z M20 19H4C3.45 19 3 19.45 3 20C3 20.55 3.45 21 4 21H20C20.55 21 21 20.55 21 20C21 19.45 20.55 19 20 19Z M20 11H4C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13H20C20.55 13 21 12.55 21 12C21 11.45 20.55 11 20 11Z`,
+		viewBox: `0 0 24 24`,
+	},
+	close: {
+		path: `M12 10.2225L18.2225 4L20 5.7775L13.7775 12L20 18.2225L18.2225 20L12 13.7775L5.7775 20L4 18.2225L10.2225 12L4 5.7775L5.7775 4L12 10.2225Z`,
 		viewBox: `0 0 24 24`,
 	},
 	search: {
