@@ -90,6 +90,11 @@ export const InputText = ({
 						_onChange(event.target.value);
 					}
 				} }
+				onKeyUp={ ( event: React.KeyboardEvent<HTMLInputElement> ) => {
+					if( _onChange ) {
+						_onChange(event.currentTarget.value );
+					}
+				} }
 				onPaste={ ( event: React.ClipboardEvent<HTMLInputElement> ) => {
 					if( _onChange ) {
 						_onChange(event.clipboardData.getData('text'));
