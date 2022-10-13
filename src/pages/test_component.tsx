@@ -128,11 +128,11 @@ function TestComponent() {
 				{/** <Image_Area/> */}
 				<img src={LogoBig} className="absolute top(84) left(57) pack w(246) h(128) r(5)" />
 				<select className="absolute top(50) left(70) w(220) h(25)" onChange={ (event) => { setTestFile(event.target.value); } }>
-					<option value="/api/test1.json">이메일</option>
-					<option value="/api/test2.json">비밀번호</option>
-					<option value="/api/test3.json">이메일형식</option>
-					<option value="/api/test4.json">아이디또는비밀번호불일치</option>
-					<option value="/api/test5.json">차단</option>
+					<option value="/api/test1.json">오류확인:이메일</option>
+					<option value="/api/test2.json">오류확인:비밀번호</option>
+					<option value="/api/test3.json">오류확인:이메일형식</option>
+					<option value="/api/test4.json">오류확인:아이디또는비밀번호불일치</option>
+					<option value="/api/test5.json">오류확인:차단</option>
 					<option value="/api/test.json">확인:로그인성공</option>
 				</select>
 				{/** </Image_Area> */}
