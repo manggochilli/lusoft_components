@@ -187,13 +187,13 @@ function TestComponent() {
 				</div>
 				{/** </Login_group> */}
 
-				<SNSbutton service="naver" size="medium" iconPosition="left" usrText="네이버 ID로 로그인" usrclass="absolute top(620) left(5) w(350)" />
+				<SNSbutton service="naver" size="medium" iconPosition="left" usrText="네이버 ID로 로그인" usrclass="absolute top(620) left(16) w[100%-32px]" />
 
-				<SNSbutton service="kakao" size="medium" iconPosition="left" usrText="카카오 ID로 로그인" usrclass="absolute top(670) left(5) w(350)" />
+				<SNSbutton service="kakao" size="medium" iconPosition="left" usrText="카카오 ID로 로그인" usrclass="absolute top(670) left(16) w[100%-32px]" />
 
-				<SNSbutton service="google" size="medium" iconPosition="left" usrText="Google ID로 로그인" usrclass="absolute top(720) left(5) w(350)" />
+				<SNSbutton service="google" size="medium" iconPosition="left" usrText="Google ID로 로그인" usrclass="absolute top(720) left(16) w[100%-32px]" />
 
-				<SNSbutton service="apple" size="medium" useFill="fill" iconPosition="left" usrText="Apple ID로 로그인" usrclass="absolute top(770) left(5) w(350)" />
+				<SNSbutton service="apple" size="medium" useFill="fill" iconPosition="left" usrText="Apple ID로 로그인" usrclass="absolute top(770) left(16) w[100%-32px]" />
 
 			</form>
 		</div>
