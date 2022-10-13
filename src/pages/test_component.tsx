@@ -108,9 +108,9 @@ function TestComponent() {
 		<div className="pack w(100vw) p(20) bg(#000.5)">
 			<form name="form_login" className="relative w(360) h(850) bg(#fff) clip" onSubmit={SendLogin}>
 				{/** <Top_navigation/> */}
-				<div className="absolute top(0) left(0) hbox hgap(222) p(10/0/0/8)">
-					<img src={LogoSmall} className="vbox w(60) h(24)" />
-					<div className="hbox hgap(9) p(0/8/0/5)">
+				<div className="relative w(100%) h(44) p(10/0) bb(1) bc(#e9e9e9)">
+					<Icon iconName="close" size={24} color="#404040" usrclass="absolute top(10) left(8) w(24) h(24)" />
+					<div className="absolute top(10) right(8) hbox hgap(9)">
 
 						{/** <Search/> */}
 						<Icon iconName="search" size={24} color="#404040" />
@@ -121,6 +121,7 @@ function TestComponent() {
 						{/** </Density_medium> */}
 
 					</div>
+					<img src={LogoSmall} className="h(25) m(0/auto)" />
 				</div>
 				{/** </Top_navigation> */}
 
