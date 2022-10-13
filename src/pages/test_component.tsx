@@ -11,7 +11,7 @@ import { Icon, Button, SNSbutton, InputText, InputPass } from "../components/ind
 function TestComponent() {
 
 	// 로그인 테스트용
-	const [ testFile , setTestFile ] = useState( '/api/test.json' );
+	const [ testFile , setTestFile ] = useState( '/api/test1.json' );
 	// 폼 유효성검사
 	const [ chkForm , setChkForm ] = useState( false );
 
