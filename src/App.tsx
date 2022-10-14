@@ -7,7 +7,7 @@ import PageTestComponent from './pages/test_component';
 
 function App() {
 	return (
-		<div className="relative w(100vw) sm h(100vh)">
+		<div className="relative w(100vw) sm h(100vh) overflow-x(hidden)">
 			<BrowserRouter>
 				<Routes>
 					<Route index element={<PageTestComponent />} />

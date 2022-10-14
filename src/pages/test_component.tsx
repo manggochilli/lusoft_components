@@ -120,7 +120,7 @@ function TestComponent() {
 	}
 
 	return (
-		<div className="pack w(100vw) p(20) bg(#000.5)">
+		<div className="pack w(100%) p(20) bg(#000.5)">
 			<form name="form_login" className="relative w(360) h(850) bg(#fff) clip" onSubmit={SendLogin}>
 				{/** <Top_navigation/> */}
 				<div className="relative w(100%) h(44) p(10/0) bb(1) bc(#e9e9e9)">
