@@ -40,8 +40,8 @@ function TestComponent() {
 	}
 
 	// 포커스 처리용
-	const usrEmailRef = useRef(null);
-	const usrPassRef = useRef(null)
+	const usrEmailRef = useRef<HTMLInputElement>(null);
+	const usrPassRef = useRef<HTMLInputElement>(null)
 
 	// 상태메세지 - 이메일
 	const [ scriptEmail , setScriptEmail ] = useState( '이메일주소를 입력하세요' );
@@ -120,12 +120,16 @@ function TestComponent() {
 						case 1 : case 3 :
 							setScriptEmail( response.data.result_text );
 							setInputKindEmail( 'underline_alert' );
-							usrEmailRef.current.focus();
+							//if( usrEmailRef.current != null ) {
+							//	usrEmailRef.current.focus();
+							//}
+							usrEmailRef.current!.focus();
+							//usrEmailRef.current?.focus();
 							break;
 						case 2 :
 							setScriptPass( response.data.result_text );
 							setInputKindPass( 'underline_alert' );
-							usrPassRef.current.focus();
+							usrPassRef.current!.focus();
 							break;
 						case 4 : case 5 :
 							alert( response.data.result_text );
