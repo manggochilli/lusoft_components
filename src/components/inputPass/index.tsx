@@ -90,12 +90,17 @@ export const InputPass = ({
 						setIconEyes('none');
 					}
 					if( _onChange ) {
-						_onChange(event.target.value);
+						_onChange( event );
+					}
+				} }
+				onKeyUp={ ( event: React.KeyboardEvent<HTMLInputElement> ) => {
+					if( _onChange ) {
+						_onChange( event );
 					}
 				} }
 				onPaste={ ( event: React.ClipboardEvent<HTMLInputElement> ) => {
 					if( _onChange ) {
-						_onChange(event.clipboardData.getData('text'));
+						_onChange( event );
 					}
 				} }
 			/>

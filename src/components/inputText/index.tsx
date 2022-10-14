@@ -87,21 +87,21 @@ export const InputText = ({
 						setIconClose('none');
 					}
 					if( _onChange ) {
-						_onChange(event.target.value);
+						_onChange( event );
 					}
 				} }
 				onKeyUp={ ( event: React.KeyboardEvent<HTMLInputElement> ) => {
 					if( _onChange ) {
-						_onChange(event.currentTarget.value );
+						_onChange( event );
 					}
 				} }
 				onPaste={ ( event: React.ClipboardEvent<HTMLInputElement> ) => {
 					if( _onChange ) {
-						_onChange(event.clipboardData.getData('text'));
+						_onChange( event );
 					}
 				} }
 			/>
-			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose}`} onClick={() => { setValsText(''); _onChange(''); setIconClose('none'); }} />
+			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose}`} onClick={() => { setValsText(''); setIconClose('none'); }} />
 		</div>
 	);
 };
