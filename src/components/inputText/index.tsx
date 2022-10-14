@@ -104,7 +104,7 @@ export const InputText = ({
 				} }
 				ref={_ref}
 			/>
-			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose}`} onClick={() => { setValsText(''); setIconClose('none'); }} />
+			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose} focus:outline(none)`} tabIndex={-1} onClick={() => { setValsText(''); setIconClose('none'); }} />
 		</div>
 	);
 };

@@ -108,10 +108,10 @@ export const InputPass = ({
 				ref={_ref}
 			/>
 			<span className={`hbox ${iconEyes}`}>
-				<Button kind="ghost" addicon="svg|eye_fill||#C8C8C8" size="small" usrclass={`absolute right(35) bg(transparent) ${iconEye}`} onClick={() => { setIconEye('none'); setIconEyeOff('show'); setType('text'); }} />
-				<Button kind="ghost" addicon="svg|eyeoff_fill||#C8C8C8" size="small" usrclass={`absolute right(35) bg(transparent) ${iconEyeOff}`} onClick={() => { setIconEye('show'); setIconEyeOff('none'); setType('password'); }} />
+				<Button kind="ghost" addicon="svg|eye_fill||#C8C8C8" size="small" usrclass={`absolute right(35) bg(transparent) ${iconEye} focus:outline(none)`} tabIndex={-1} onClick={() => { setIconEye('none'); setIconEyeOff('show'); setType('text'); }} />
+				<Button kind="ghost" addicon="svg|eyeoff_fill||#C8C8C8" size="small" usrclass={`absolute right(35) bg(transparent) ${iconEyeOff} focus:outline(none)`} tabIndex={-1} onClick={() => { setIconEye('show'); setIconEyeOff('none'); setType('password'); }} />
 			</span>
-			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose}`} onClick={closeArea} />
+			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose} focus:outline(none)`} tabIndex={-1} onClick={closeArea} />
 		</span>
 	);
 };

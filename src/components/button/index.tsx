@@ -31,6 +31,7 @@ interface ButtonProps {
 	 * Optional click handler
 	 */
 	onClick?: () => void;
+	tabIndex?: number;
 }
 
 /**
@@ -43,6 +44,7 @@ export const Button = ({
 	addicon = 'none',
 	usrclass,
 	children,
+	tabIndex,
 	...props
 }: ButtonProps) => {
 	const btn_type = type ? type : 'button';
@@ -168,7 +170,8 @@ export const Button = ({
 		<button
 			type={btn_type}
 			className={[kindclass, btnaAdclass, sizeclass, usrclass].join(' ')}
-		{...props}
+			tabIndex={tabIndex}
+			{...props}
 		>
 			{iconItem}
 			{children}
