@@ -1,5 +1,14 @@
 :root {
 	/**
+	* color set
+	*/
+	--terriary-border-color: #e0e0e0;
+	--alert-border-color: #da1e28;
+
+	--placeholder-font-color: #a8a8a8;
+
+
+	/**
 	* --color- 포인트색상
 	*/
 

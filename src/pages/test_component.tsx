@@ -12,8 +12,13 @@ function TestComponent() {
 
 	// 로그인 테스트용
 	const [ testFile , setTestFile ] = useState( '/api/test1.json' );
+
 	// 폼 유효성검사
 	const [ chkForm , setChkForm ] = useState( false );
+
+	// 입력박스 종류
+	const [ inputKindEmail , setInputKindEmail ] = useState( 'underline' );
+	const [ inputKindPass , setInputKindPass ] = useState( 'underline' );
 
 	// 로그인 버튼 disabled 처리
 	const [ disabled , setDisabled ] = useState( true );
@@ -33,14 +38,17 @@ function TestComponent() {
 		if( usrEmail.length < 6 ) {
 			setScriptEmail( '이메일주소를 입력하세요' );
 			setChkForm( false );
+			setInputKindEmail( 'underline_alert' );
 		} else if( !emailTerm.test( usrEmail ) ) {
 			setScriptEmail( '이메일 형식이 아닙니다.' );
 			setDisabled( true );
 			setChkForm( false );
+			setInputKindEmail( 'underline_alert' );
 		} else {
 			setScriptEmail( '' );
 			setDisabled( false );
 			setChkForm( true );
+			setInputKindEmail( 'underline' );
 		}
 	}
 
@@ -53,10 +61,14 @@ function TestComponent() {
 		if( usrPass.length < 4 ) {
 			setScriptPass( '비밀번호를 확인해주세요' );
 			setDisabled( false );
+			setChkForm( false );
+			setInputKindPass( 'underline_alert' );
 			return false;
 		} else {
 			setScriptPass( '' );
 			setDisabled( true );
+			setChkForm( true );
+			setInputKindPass( 'underline' );
 		}
 
 		// 입력값을 취합
@@ -64,43 +76,47 @@ function TestComponent() {
 		formData.append('usrEmail',usrEmail);
 		formData.append('usrPass',usrPass);
 
-
 		// formData 확인
-		for( let key of formData.keys() ) {
-			console.log( `${key}: ${formData.get(key)}` );
-		}
-
+		//for( let key of formData.keys() ) {
+		//	console.log( `${key}: ${formData.get(key)}` );
+		//}
 
 		// 전송
-		console.log('전송 click - 작동하지 않습니다.');
-		axios.post( testFile , formData)
-		.then( function ( response ) {
-			//console.log( response );
-			setScriptEmail('');
-			setScriptPass('');
-			if( response.data.result === 'success' ) {
-				alert('로그인 성공');
-				console.log('페이지 이동(실행하지 않습니다.)');
-			} else if( response.data.result === 'error' ) {
-				console.log('로그인 실패(test)');
-				console.log(response.data.result_code);
-				switch( response.data.result_code ) {
-					case 1 : case 3 :
-						setScriptEmail( response.data.result_text );
-						break;
-					case 2 :
-						setScriptPass( response.data.result_text );
-						break;
-					case 4 : case 5 :
-						alert( response.data.result_text );
-						break;
+		if( chkForm === true ) {
+			console.log('전송 click - 작동하지 않습니다.');
+			axios.post( testFile , formData)
+			.then( function ( response ) {
+				//console.log( response );
+				setScriptEmail('');
+				setScriptPass('');
+				setInputKindEmail( 'underline' );
+				setInputKindPass( 'underline' );
+				if( response.data.result === 'success' ) {
+					alert('로그인 성공');
+					//console.log('페이지 이동(실행하지 않습니다.)');
+				} else if( response.data.result === 'error' ) {
+					//console.log('로그인 실패(test)');
+					//console.log(response.data.result_code);
+					switch( response.data.result_code ) {
+						case 1 : case 3 :
+							setScriptEmail( response.data.result_text );
+							setInputKindEmail( 'underline_alert' );
+							break;
+						case 2 :
+							setScriptPass( response.data.result_text );
+							setInputKindPass( 'underline_alert' );
+							break;
+						case 4 : case 5 :
+							alert( response.data.result_text );
+							break;
+					}
 				}
 				setDisabled( false );
-			}
-		} )
-		.catch( function ( error ) {
-			console.log( error );
-		} )
+			} )
+			.catch( function ( error ) {
+				console.log( error );
+			} )
+		}
 	}
 
 	return (
@@ -143,7 +159,7 @@ function TestComponent() {
 					<div className="vbox vgap(4)">
 						<div className="vbox vgap(8)">
 							<div className="w(300) font(12/18) c(#525252)">이메일 주소</div>
-							<InputText name="usr_email" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="예) kream@kream.co.kr" required={true} vals={usrEmail} _onChange={ ( return_val:string ) => { setUsrEmail(return_val); checkEmail(); } } />
+							<InputText name="usr_email" kind={inputKindEmail} usrclass="w(300) h(48) p(0/40/0/10) placeholder:w(236) placeholder:font(14/20)" placeholder="예) kream@kream.co.kr" required={true} vals={usrEmail} _onChange={ ( return_val:string ) => { setUsrEmail(return_val); checkEmail(); } } />
 						</div>
 						<div className="w(300) font(12/18) c(#c9162b)">{scriptEmail}</div>
 					</div>
@@ -159,7 +175,7 @@ function TestComponent() {
 					<div className="vbox">
 						<div className="vbox vgap(8)">
 							<div className="w(300) font(12/18) c(#525252)">비밀번호</div>
-							<InputPass name="usr_pass" kind="underline" usrclass="w(300) h(48) p(0/40/0/10) bg(#fff) bc(#ccc) placeholder:w(236) placeholder:font(14/20) placeholder:c(#a8a8a8)" placeholder="비밀번호" required={true} vals={usrPass} _onChange={ ( return_val:string ) => { setUsrPass(return_val); } } />
+							<InputPass name="usr_pass" kind={inputKindPass} usrclass="w(300) h(48) p(0/40/0/10) placeholder:w(236) placeholder:font(14/20)" placeholder="비밀번호" required={true} vals={usrPass} _onChange={ ( return_val:string ) => { setUsrPass(return_val); } } />
 						</div>
 						<div className="w(300) font(12/18) c(#c9162b)">{scriptPass}</div>
 					</div>

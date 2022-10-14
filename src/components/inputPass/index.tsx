@@ -13,7 +13,7 @@ interface InputPassProps {
 	/**
 	 * 구분
 	 */
-	kind?: 'box' | 'underline' | 'ghost';
+	kind?: 'box' | 'underline' | 'ghost' | string;
 	/**
 	 * 사용자 추가 클래스
 	 */
@@ -47,14 +47,14 @@ export const InputPass = ({
 	_onChange,
 	...props
 }: InputPassProps) => {
-	const kindclass = kind === 'box' ?
-		`b(1) `
-	: kind === 'underline' ?
-		`b(0) bb(1) `
+	const kindclass = kind === 'underline' ?
+		`bt(0) br(0) bb(1) bl(0) bc(--tertiary-border-color) bg(#fff) placeholder:c(--placeholder-font-color) focus:outline(none)`
+	: kind === 'underline_alert' ?
+		`bt(0) br(0) bb(1) bl(0) bc(--alert-border-color) bg(#fff) placeholder:c(--placeholder-font-color) focus:outline(none)`
 	: kind === 'ghost' ?
-		`b(0) `
-	:
-		``;
+		`b(0) bg(#fff) c(--placeholder-font-color) focus:outline(none)`
+	: // default kind box
+		`b(1) bc(--terriary-border-color) bg(#fff) placeholder:c(--placeholder-font-color) focus:outline(none)`
 	const [ type , setType ] = useState( 'password' );
 	const [ iconEyes , setIconEyes ] = useState( 'none' );
 	const [ iconEye , setIconEye ] = useState( 'show' );
