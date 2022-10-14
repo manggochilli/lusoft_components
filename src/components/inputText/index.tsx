@@ -33,7 +33,8 @@ interface InputTextProps {
 	/**
 	 * onchange event
 	 */
-	_onChange?: any
+	_onChange?: any;
+	_ref?: any;
 }
 
 export const InputText = ({
@@ -45,6 +46,7 @@ export const InputText = ({
 	required,
 	vals,
 	_onChange,
+	_ref,
 	...props
 }: InputTextProps) => {
 	const kindclass = kind === 'underline' ?
@@ -100,6 +102,7 @@ export const InputText = ({
 						_onChange( event );
 					}
 				} }
+				ref={_ref}
 			/>
 			<Button kind="ghost" addicon="svg|close_circle||#C8C8C8" size="small" usrclass={`absolute right(0) bg(transparent) ${iconClose}`} onClick={() => { setValsText(''); setIconClose('none'); }} />
 		</div>

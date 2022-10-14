@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
@@ -28,6 +28,7 @@ function TestComponent() {
 		usr_email: '',
 		usr_pass: ''
 	});
+
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		if( e ) {
 			setInputs({
@@ -37,6 +38,10 @@ function TestComponent() {
 			//console.log( e.target.name + ' : ' + e.target.value );
 		}
 	}
+
+	// 포커스 처리용
+	const usrEmailRef = useRef(null);
+	const usrPassRef = useRef(null)
 
 	// 상태메세지 - 이메일
 	const [ scriptEmail , setScriptEmail ] = useState( '이메일주소를 입력하세요' );
@@ -114,10 +119,12 @@ function TestComponent() {
 						case 1 : case 3 :
 							setScriptEmail( response.data.result_text );
 							setInputKindEmail( 'underline_alert' );
+							usrEmailRef.current.focus();
 							break;
 						case 2 :
 							setScriptPass( response.data.result_text );
 							setInputKindPass( 'underline_alert' );
+							usrPassRef.current.focus();
 							break;
 						case 4 : case 5 :
 							alert( response.data.result_text );
@@ -172,7 +179,7 @@ function TestComponent() {
 					<div className="vbox vgap(4)">
 						<div className="vbox vgap(8)">
 							<div className="w(300) font(12/18) c(#525252)">이메일 주소</div>
-							<InputText name="usr_email" kind={inputKindEmail} usrclass="w(300) h(48) p(0/40/0/10) placeholder:w(236) placeholder:font(14/20)" placeholder="예) kream@kream.co.kr" required={true} vals={Inputs.usr_email} _onChange={ ( returnvals:any ) => { handleChange( returnvals ); checkEmail(); } } />
+							<InputText name="usr_email" kind={inputKindEmail} usrclass="w(300) h(48) p(0/40/0/10) placeholder:w(236) placeholder:font(14/20)" placeholder="예) kream@kream.co.kr" required={true} vals={Inputs.usr_email} _onChange={ ( returnvals:any ) => { handleChange( returnvals ); checkEmail(); } } _ref={usrEmailRef} />
 						</div>
 						<div className="w(300) font(12/18) c(#c9162b)">{scriptEmail}</div>
 					</div>
@@ -188,7 +195,7 @@ function TestComponent() {
 					<div className="vbox">
 						<div className="vbox vgap(8)">
 							<div className="w(300) font(12/18) c(#525252)">비밀번호</div>
-							<InputPass name="usr_pass" kind={inputKindPass} usrclass="w(300) h(48) p(0/40/0/10) placeholder:w(236) placeholder:font(14/20)" placeholder="비밀번호" required={true} vals={Inputs.usr_pass} _onChange={ ( return_val:any ) => { handleChange(return_val); } } />
+							<InputPass name="usr_pass" kind={inputKindPass} usrclass="w(300) h(48) p(0/40/0/10) placeholder:w(236) placeholder:font(14/20)" placeholder="비밀번호" required={true} vals={Inputs.usr_pass} _onChange={ ( return_val:any ) => { handleChange(return_val); } } _ref={usrPassRef} />
 						</div>
 						<div className="w(300) font(12/18) c(#c9162b)">{scriptPass}</div>
 					</div>

@@ -33,7 +33,8 @@ interface InputPassProps {
 	/**
 	 * onchange event
 	 */
-	_onChange?: any
+	_onChange?: any;
+	_ref?: any;
 }
 
 export const InputPass = ({
@@ -45,6 +46,7 @@ export const InputPass = ({
 	required,
 	vals,
 	_onChange,
+	_ref,
 	...props
 }: InputPassProps) => {
 	const kindclass = kind === 'underline' ?
@@ -103,6 +105,7 @@ export const InputPass = ({
 						_onChange( event );
 					}
 				} }
+				ref={_ref}
 			/>
 			<span className={`hbox ${iconEyes}`}>
 				<Button kind="ghost" addicon="svg|eye_fill||#C8C8C8" size="small" usrclass={`absolute right(35) bg(transparent) ${iconEye}`} onClick={() => { setIconEye('none'); setIconEyeOff('show'); setType('text'); }} />
