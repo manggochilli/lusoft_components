@@ -1,8 +1,60 @@
+@import url("https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css");
+@import url("https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css");
+
+html {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+	font-size: 16px;
+}
+/**
+* 나눔스퀘어
+* Light(300), Regular(400), Bold(700), ExtraBold(800)
+* 경량화버전 / 2,350자
+**/
+.nanumsquare { font-family: 'NanumSquare', sans-serif; }
+/**
+* 나눔바른고딕
+* UltraLight(200), Light(300), Regular(400), Bold(700)
+* 경량화버전 / 한글 및 특수문자 3,709자
+**/
+.nanumbarun { font-family: 'NanumBarunGothic', sans-serif; }
+
 :root {
 	/**
-	* color set
+	* Default color set
 	*/
+	--default-bg-color: #fff;
+	--default-border-color: #ccc;
+	--default-font-color: #000;
+
+	/**
+	* Default font set
+	*/
+	--default-font-size: 1rem;
+
+	--primary-color: #15BD66;
+	--primary-border-color: #15BD66;
+	--primary-bg-color: #15BD66;
+	--primary-font-color: #15BD66;
+
+	--secondary-color: #383838;
+	--secondary-border-color: #383838;
+	--secondary-bg-color: #383838;
+	--secondary-font-color: #383838;
+
+	--danger-color: #da1e28;
+	--danger-border-color: #da1e28;
+	--danger-bg-color: #da1e28;
+	--danger-font-color: #da1e28;
+
+	--tertiary-border-color: #e0e0e0;
+	--tertiary-bg-color: #fff;
+	--tertiary-font-color: #000;
+	--tertiary-fill-border-color: #fff;
+	--tertiary-fill-bg-color: #383838;
+	--tertiary-fill-font-color: #fff;
+
 	--terriary-border-color: #e0e0e0;
+
 	--alert-border-color: #da1e28;
 
 	--placeholder-font-color: #a8a8a8;
