@@ -13,7 +13,7 @@ function TestComponent() {
 	// 로그인 테스트용
 	const [ testFile , setTestFile ] = useState( '/api/test1.json' );
 
-	// 폼 유효성검사
+	// 폼 유효성확인
 	const [ chkForm , setChkForm ] = useState( false );
 
 	// 입력박스 종류
@@ -59,13 +59,13 @@ function TestComponent() {
 			setInputKindEmail( 'underline_alert' );
 		} else if( !emailTerm.test( Inputs.usr_email ) ) {
 			setScriptEmail( '이메일 형식이 아닙니다.' );
-			setDisabled( true );
 			setChkForm( false );
+			setDisabled( true );
 			setInputKindEmail( 'underline_alert' );
 		} else {
 			setScriptEmail( '' );
-			setDisabled( false );
 			setChkForm( true );
+			setDisabled( false );
 			setInputKindEmail( 'underline' );
 		}
 	}
@@ -74,7 +74,7 @@ function TestComponent() {
 	const SendLogin = (event: React.FormEvent<HTMLFormElement>) => {
 		// 중복 실행 방지
 		event.preventDefault();
-		setDisabled( true ); // 전송 버튼 비활성화 시켜서 중복 실행 방지\
+		setDisabled( true ); // 전송 버튼 비활성화 시켜서 중복 실행 방지
 
 		if( Inputs.usr_pass.length < 4 ) {
 			setScriptPass( '비밀번호를 확인해주세요' );
@@ -101,7 +101,7 @@ function TestComponent() {
 
 		// 전송
 		if( chkForm === true ) {
-			console.log('전송 click - 작동하지 않습니다.');
+			//console.log('전송 click - 작동하지 않습니다.');
 			axios.post( testFile , formData)
 			.then( function ( response ) {
 				//console.log( response );
@@ -111,7 +111,8 @@ function TestComponent() {
 				setInputKindPass( 'underline' );
 				if( response.data.result === 'success' ) {
 					alert('로그인 성공');
-					//console.log('페이지 이동(실행하지 않습니다.)');
+					// console.log('페이지 이동(실행하지 않습니다.)');
+					// jwt 처리
 				} else if( response.data.result === 'error' ) {
 					//console.log('로그인 실패(test)');
 					//console.log(response.data.result_code);
