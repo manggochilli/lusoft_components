@@ -180,7 +180,7 @@ function TestComponent() {
 					<div className="vbox vgap(4)">
 						<div className="vbox vgap(8)">
 							<div className="w(300) font(12/18) c(#525252)">이메일 주소</div>
-							<InputText name="usr_email" kind={inputKindEmail} usrclass="w(300) h(48) p(0/40/0/10) placeholder:w(236) placeholder:font(14/20)" placeholder="예) kream@kream.co.kr" required={true} vals={Inputs.usr_email} _onChange={ ( returnvals:any ) => { handleChange( returnvals ); checkEmail(); } } _ref={usrEmailRef} />
+							<InputText name="usr_email" kind={inputKindEmail} usrclass="w(300) h(48) p(0/40/0/10) placeholder:w(236) placeholder:font(14/20)" placeholder="예) kream@kream.co.kr" required={true} vals={Inputs.usr_email} _onChange={ ( return_event:any ) => { handleChange( return_event ); checkEmail(); } } _ref={usrEmailRef} />
 						</div>
 						<div className="w(300) font(12/18) c(#c9162b)">{scriptEmail}</div>
 					</div>
@@ -196,7 +196,7 @@ function TestComponent() {
 					<div className="vbox">
 						<div className="vbox vgap(8)">
 							<div className="w(300) font(12/18) c(#525252)">비밀번호</div>
-							<InputPass name="usr_pass" kind={inputKindPass} usrclass="w(300) h(48) p(0/40/0/10) placeholder:w(236) placeholder:font(14/20)" placeholder="비밀번호" required={true} vals={Inputs.usr_pass} _onChange={ ( return_val:any ) => { handleChange(return_val); } } _ref={usrPassRef} />
+							<InputPass name="usr_pass" kind={inputKindPass} usrclass="w(300) h(48) p(0/40/0/10) placeholder:w(236) placeholder:font(14/20)" placeholder="비밀번호" required={true} vals={Inputs.usr_pass} _onChange={ ( return_event:any ) => { handleChange( return_event ); } } _ref={usrPassRef} />
 						</div>
 						<div className="w(300) font(12/18) c(#c9162b)">{scriptPass}</div>
 					</div>
