@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./css/theme.css";
 
+import DefaultLayout from "./layout";
+
 // scrolltop
 import ScrollToTop from './pages/_scroll_top';
 
@@ -17,12 +19,13 @@ function App() {
 		<BrowserRouter>
 			<ScrollToTop />
 			<Routes>
-				<Route index element={<Index />} />
-				<Route path="/test/handshake" element={<PageTestHandShake />} />
-				<Route path="/test/component" element={<PageTestComponent />} />
+				<Route element={<DefaultLayout />} >
+					<Route index element={<Index />} />
+				</Route>
+				<Route path="/test/handshake" element={<DefaultLayout><PageTestHandShake /></DefaultLayout>} />
+				<Route path="/test/component" element={<DefaultLayout><PageTestComponent /></DefaultLayout>} />
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
-			<Header />
 		</BrowserRouter>
 	)
 }
