@@ -9,6 +9,8 @@ export default function DefaultHeader() {
 			<Link to="/test/handshake" className="inline-block h(30) c(--color-secondary) hover:c(--color-primary) hover:bold">HandShake</Link>
 			<div className="inline-block h(30)">|</div>
 			<Link to="/test/component" className="inline-block h(30) c(--color-secondary) hover:c(--color-primary) hover:bold">Components</Link>
+			<div className="inline-block h(30)">|</div>
+			<Link to="/test/swiper" className="inline-block h(30) c(--color-secondary) hover:c(--color-primary) hover:bold">Swiper</Link>
 		</header>
 	)
 }
