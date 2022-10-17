@@ -4,6 +4,8 @@ import "./css/theme.css";
 
 // Pages
 import NotFound from './pages/_404';
+import Index from './pages/index';
+import PageTestHandShake from './pages/test_handshake';
 import PageTestComponent from './pages/test_component';
 
 function App() {
@@ -11,7 +13,9 @@ function App() {
 		<div className="relative w(100vw) sm h(100vh) overflow-x(hidden)">
 			<BrowserRouter>
 				<Routes>
-					<Route index element={<PageTestComponent />} />
+					<Route index element={<Index />} />
+					<Route path="/test/handshake" element={<PageTestComponent />} />
+					<Route path="/test/component" element={<PageTestComponent />} />
 					<Route path="/*" element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>
