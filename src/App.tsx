@@ -21,9 +21,7 @@ function App() {
 		<BrowserRouter>
 			<ScrollToTop />
 			<Routes>
-				<Route element={<DefaultLayout />} >
-					<Route index element={<Index />} />
-				</Route>
+				<Route index element={<DefaultLayout><Index /></DefaultLayout>} />
 				<Route path="/test/handshake" element={<DefaultLayout><PageTestHandShake /></DefaultLayout>} />
 				<Route path="/test/component" element={<DefaultLayout><PageTestComponent /></DefaultLayout>} />
 				<Route path="/test/swiper" element={<DefaultLayout><PageTestSwiperJS /></DefaultLayout>} />
