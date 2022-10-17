@@ -5,7 +5,7 @@ import { LayoutDefaultProps } from '@types'
 
 export default function Defaultlaout( {children}:LayoutDefaultProps ) {
 	return (
-		<div className="relative w(375px~100vw~100vw) overflow-x(hidden)">
+		<div className="absolute top(0) left(0) w(375px~100vw~100vw) overflow-x(hidden)">
 			<Header />
 			<main>
 				{ children || <Outlet /> }

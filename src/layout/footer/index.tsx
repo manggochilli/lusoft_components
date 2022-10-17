@@ -1,7 +1,7 @@
 export default function DefaultFooter() {
 	return (
-		<footer>
-			기본 Footer 영역
+		<footer className="hpack grid gap(10px) w(100vw) c(#ccc)">
+			components test page
 		</footer>
 	);
 }
