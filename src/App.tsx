@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./css/theme.css";
 
 // Pages
+import NotFound from './pages/_404';
 import PageTestComponent from './pages/test_component';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route index element={<PageTestComponent />} />
+					<Route path="/*" element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>
 		</div>
