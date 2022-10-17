@@ -16,7 +16,7 @@ function App() {
 				<Header />
 				<Routes>
 					<Route index element={<Index />} />
-					<Route path="/test/handshake" element={<PageTestComponent />} />
+					<Route path="/test/handshake" element={<PageTestHandShake />} />
 					<Route path="/test/component" element={<PageTestComponent />} />
 					<Route path="/*" element={<NotFound />} />
 				</Routes>
