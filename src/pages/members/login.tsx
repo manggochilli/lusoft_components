@@ -1,7 +1,10 @@
-import React from "react";
+import React,{ useState } from "react";
+import { Link } from "react-router-dom";
 import { Icon, InputText, InputPass, Button, SNSbutton } from '../../components/index';
 
 function MemberLogin() {
+	// 탭 메뉴에 따른 반응 - 개인/기업 회원
+	const [ tabActive , setTabActive ] = useState('person');
 	return (
 		<div className="pack w(100%) p(20) bg(#000.5)">
 			<div className="relative w(375px~100%~1000px) bg(#fff)">
@@ -54,21 +57,11 @@ function MemberLogin() {
 							<ul className="hbox pack flex">
 
 								{/** <__Tab/> **/}
-								<li className="vbox pack flex bg(transparent) clip">
-									<div className="pack p(14/16)">
-										<div className="font(15/20) c(#1a9cff) text-center">개인회원</div>
-									</div>
-									<div className="w(fill) h(2) bg(#1a9cff)"></div>
-								</li>
+								<li onClick={ () => { setTabActive('person') } } className={`flex clip p(14/16) bb(2) ${ tabActive === 'person' ? `bc(--primary-border-color)` : 'bc(--default-border-color)'} bg(transparent) font(15/20) ${ tabActive === 'person' ? 'c(--primary-font-color)' : 'c(--default-font-color)'} text-center pointer`}>개인회원</li>
 								{/** </__Tab> **/}
 
 								{/** <__Tab/> **/}
-								<li className="vbox pack flex bg(#fff) clip">
-									<div className="pack p(14/16)">
-										<div className="font(15/20) c(#c8c8c8) text-center">기업회원</div>
-									</div>
-									<div className="w(fill) h(2) bg(#efefef)"></div>
-								</li>
+								<li onClick={ () => { setTabActive('company') } } className={`flex clip p(14/16) bb(2) ${ tabActive === 'company' ? 'bc(--primary-border-color)' : 'bc(--default-border-color)'} bg(transparent) font(15/20) ${ tabActive === 'company' ? 'c(--primary-font-color)' : 'c(--default-font-color)'} text-center pointer`}>기업회원</li>
 								{/** </__Tab> **/}
 
 							</ul>
@@ -189,7 +182,7 @@ function MemberLogin() {
 					</div>
 
 					{/** <SNS_Group/> **/}
-					<div className="pack p(0/16) w(375px~100%~1000px)">
+					<div className={`pack p(0/16) w(375px~100%~1000px) ${ tabActive === 'person' ? '' : 'none' }`}>
 						<div className="vbox vgap(10) w(100%)">
 
 							{/** <SNS_Login_Button/> **/}
@@ -223,9 +216,8 @@ function MemberLogin() {
 							<div className="vbox p(2) w(121) h(34) r(8) clip">
 
 								{/** <_Button_base/> **/}
-								<div className="pack p(5/38) h(30) r(6) clip">
-									<div className="font(11/16) c(#4270ed) text-center">개인 회원가입</div>
-								</div>
+								<Link to="/" className={`${ tabActive === 'person' ? '' : 'none' }`}><Button kind="ghost" size="small" usrclass="c(--primary-font-color)">개인 회원가입</Button></Link>
+								<Link to="/" className={`${ tabActive === 'company' ? '' : 'none' }`}><Button kind="ghost" size="small" usrclass="c(--primary-font-color)">기업 회원가입</Button></Link>
 								{/** </_Button_base> **/}
 
 							</div>
