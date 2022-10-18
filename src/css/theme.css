@@ -31,10 +31,10 @@ html {
 	*/
 	--default-font-size: 1rem;
 
-	--primary-color: #15BD66;
-	--primary-border-color: #15BD66;
-	--primary-bg-color: #15BD66;
-	--primary-font-color: #15BD66;
+	--primary-color: #1a9cff;
+	--primary-border-color: #1a9cff;
+	--primary-bg-color: #1a9cff;
+	--primary-font-color: #1a9cff;
 
 	--secondary-color: #383838;
 	--secondary-border-color: #383838;
@@ -67,7 +67,7 @@ html {
 	/**
 	* primary
 	*/
-	--color-primary: #15BD66;
+	--color-primary: #1a9cff;
 
 	/**
 	* secondary
