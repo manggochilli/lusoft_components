@@ -16,6 +16,9 @@ import PageTestHandShake from './pages/test_handshake';
 import PageTestComponent from './pages/test_component';
 import PageTestSwiperJS from './pages/test_swiper';
 
+// Pages
+import MemberLogin from './pages/members/login';
+
 function App() {
 	return (
 		<BrowserRouter>
@@ -25,6 +28,9 @@ function App() {
 				<Route path="/test/handshake" element={<DefaultLayout><PageTestHandShake /></DefaultLayout>} />
 				<Route path="/test/component" element={<DefaultLayout><PageTestComponent /></DefaultLayout>} />
 				<Route path="/test/swiper" element={<DefaultLayout><PageTestSwiperJS /></DefaultLayout>} />
+
+				<Route path="/member/login" element={<DefaultLayout><MemberLogin /></DefaultLayout>} />
+
 				<Route path="/*" element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>
