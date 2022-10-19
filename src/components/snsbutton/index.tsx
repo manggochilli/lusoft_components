@@ -12,26 +12,26 @@ type serviceStandard = {
 
 const ServiceSet: Record<serviceName, serviceStandard> = {
 	naver: {
-		fill_class: 'bg(--sns-naver-color) c(--sns-naver-subcolor) b(.5) bc(--sns-naver-color) hover:b(.5) hover:bc(--sns-naver-color) ',
-		empty_class: 'bg(#fff) c(#000) b(.5) bc(#000.2) hover:b(.5) hover:bc(#000.2) ',
+		fill_class: 'bg(--sns-naver-fill-bg-color) c(--sns-naver-fill-font-color) b(.5) bc(--sns-naver-fill-bg-color) hover:b(.5) hover:bc(--sns-naver-fill-bg-color) ',
+		empty_class: 'bg(--sns-naver-bg-color) c(--sns-naver-font-color) b(.5) bc(--default-border-color) hover:b(.5) hover:bc(--default-border-color) ',
 		color_icon: '/image/icons/naver.png',
 		grey_icon: '',
 	},
 	kakao: {
-		fill_class: 'bg(--sns-kakao-color) c(--sns-kakao-subcolor) b(.5) bc(--sns-kakao-color) hover:b(.5) hover:bc(--sns-kakao-color) ',
-		empty_class: 'bg(#fff) c(#000) b(.5) bc(#000.2) hover:b(.5) hover:bc(#000.2) ',
+		fill_class: 'bg(--sns-kakao-fill-bg-color) c(--sns-kakao-fill-font-color) b(.5) bc(--sns-kakao-fill-bg-color) hover:b(.5) hover:bc(--sns-kakao-fill-bg-color) ',
+		empty_class: 'bg(--sns-kakao-bg-color) c(--sns-kakao-font-color) b(.5) bc(--default-border-color) hover:b(.5) hover:bc(--default-border-color) ',
 		color_icon: '/image/icons/kakao.png',
 		grey_icon: '',
 	},
 	google: {
-		fill_class: 'bg(--sns-google-color) c(--sns-google-subcolor) b(.5) bc(--sns-google-color) hover:b(.5) hover:bc(--sns-google-color)',
-		empty_class: 'bg(#fff) c(#000) b(.5) bc(#000.2) hover:b(.5) hover:bc(#000.2) ',
+		fill_class: 'bg(--sns-google-fill-bg-color) c(--sns-google-fill-font-color) b(.5) bc(--sns-google-fill-bg-color) hover:b(.5) hover:bc(--sns-google-fill-bg-color)',
+		empty_class: 'bg(--sns-google-bg-color) c(--sns-google-font-color) b(.5) bc(--default-border-color) hover:b(.5) hover:bc(--default-border-color) ',
 		color_icon: '/image/icons/google.png',
 		grey_icon: '',
 	},
 	apple: {
-		fill_class: 'bg(--sns-apple-color) c(--sns-apple-subcolor) b(.5) bc(--sns-apple-color) hover:b(.5) hover:bc(--sns-apple-color)',
-		empty_class: 'bg(#fff) c(#000) b(.5) bc(#000.2) hover:b(.5) hover:bc(#000.2) ',
+		fill_class: 'bg(--sns-apple-fill-bg-color) c(--sns-apple-fill-font-color) b(.5) bc(--sns-apple-fill-bg-color) hover:b(.5) hover:bc(--sns-apple-fill-bg-color)',
+		empty_class: 'bg(--sns-apple-bg-color) c(--sns-apple-font-color) b(.5) bc(--default-border-color) hover:b(.5) hover:bc(--default-border-color) ',
 		color_icon: '/image/icons/apple.png',
 		grey_icon: '',
 	}
@@ -86,6 +86,6 @@ export const SNSbutton = ({
 		ServiceSet[service].empty_class
 	const addicon = iconPosition != 'none' ? 'image|'+ServiceSet[service].color_icon+'|'+iconPosition : 'none';
 	return (
-		<Button kind="tertiary-ghost" size={size} usrclass={[service_color, usrclass].join(' ')} addicon={addicon}>{usrText}</Button>
+		<Button kind="tertiary-fixed" size={size} usrclass={[service_color, usrclass].join(' ')} addicon={addicon}>{usrText}</Button>
 	);
 };

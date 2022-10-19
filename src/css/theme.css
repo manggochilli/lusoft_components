@@ -65,7 +65,7 @@ html {
 	* Tertiary
 	*/
 	--tertiary-font-color: #000;
-	--tertiary-border-color: #000;
+	--tertiary-border-color: #ccc;
 	--tertiary-fill-bg-color: #000;
 	--tertiary-fill-border-color: #000;
 	--tertiary-fill-font-color: #fff;
@@ -89,7 +89,7 @@ html {
 	* SNS Color
 	*/
 	--sns-naver-bg-color: #fff;
-	--sns-naver-font-color: #15BD66;
+	--sns-naver-font-color: #000;
 	--sns-naver-fill-bg-color: #15BD66;
 	--sns-naver-fill-font-color: #fff;
 
