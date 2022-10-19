@@ -92,7 +92,7 @@ export const Button = ({
 	: kind === 'danger--ghost' ?
 		`bg(--white-color) c(--danger-font-color) b(0) ` +
 		`pointer transition(.2s) ` +
-		`hover:bg(--danger-fill-bg-color) hover:c(--danger-fill-font-color) hover:brightness(0.95) hover:elevation(4) ` +
+		`hover:bg(--danger-bg-color) hover:c(--danger-fill-font-color) hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--disabled-bg-color) disabled:c(--disabled-font-color) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	:
