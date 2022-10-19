@@ -104,17 +104,17 @@ export const Button = ({
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `;
 	const sizeclass = size === 'small' ?
-		`h(34) p(2) r(8) font(14) 400 `
+		`h(32) p(2) r(8) font(14) 400 line-height(18) `
 	: size === 'medium' ?
-		`h(40) p(2) r(8) font(14) 400 `
+		`h(40) p(2) r(8) font(14) 400 line-height(18) `
 	: size === 'large' ?
-		`h(50) p(2) r(8) font(14) 400 `
+		`h(48) p(2) r(8) font(14) 400 line-height(18) `
 	: size === 'expressive' ?
-		`h(46) p(2) r(8) font(14) 400 `
+		`h(48) p(2) r(8) font(16) 400 line-height(18) `
 	: size === 'extralarge' ?
-		`h(66) p(2) r(8) font(14) 400 `
+		`h(64) p(2) r(8) font(14) 400 line-height(18) `
 	:
-		`p(7) r(7) font(15) regular `;
+		`p(2) r(2) font(14) 400 `;
 	const imgsize = size === 'small' ?
 		`w(24) h(24) `
 	: size === 'medium' ?
