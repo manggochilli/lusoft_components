@@ -20,80 +20,91 @@ html {
 
 :root {
 	/**
-	* Default color set
+	* Default
 	*/
-	--default-bg-color: #fff;
-	--default-border-color: #ccc;
+	--white-color: #fff;
+	--black-color: #1E1B22;
+	--red-color: #AE1E2C;
+	--blue-color: #0C3A5E;
+	--green-color: #406E52;
+	--gold-color: #e2af05;
+	--puple-color: #3D1689;
+
+	--default-font-size: 1rem;
 	--default-font-color: #000;
+	--default-border-color: #ccc;
 
 	/**
-	* Default font set
+	* Placeholder
 	*/
-	--default-font-size: 1rem;
+	--placeholder-font-color: #a9a9a9;
 
-	--primary-color: #1a9cff;
-	--primary-border-color: #1a9cff;
+	/**
+	* Disabled
+	*/
+	--disabled-bg-color: #e9e9e9;
+	--disabled-font-color: #999;
+
+	/**
+	* Primary
+	*/
 	--primary-bg-color: #1a9cff;
 	--primary-font-color: #1a9cff;
+	--primary-border-color: #1a9cff;
+	--primary-fill-font-color: #fff;
 
-	--secondary-color: #383838;
-	--secondary-border-color: #383838;
-	--secondary-bg-color: #383838;
-	--secondary-font-color: #383838;
+	/**
+	* Secondary
+	*/
+	--secondary-bg-color: #404040;
+	--secondary-font-color: #404040;
+	--secondary-border-color: #404040;
+	--secondary-fill-font-color: #fff;
 
-	--danger-color: #da1e28;
-	--danger-border-color: #da1e28;
-	--danger-bg-color: #da1e28;
-	--danger-font-color: #da1e28;
-
-	--tertiary-border-color: #e0e0e0;
-	--tertiary-bg-color: #fff;
+	/**
+	* Tertiary
+	*/
 	--tertiary-font-color: #000;
-	--tertiary-fill-border-color: #fff;
-	--tertiary-fill-bg-color: #383838;
+	--tertiary-border-color: #000;
+	--tertiary-fill-bg-color: #000;
+	--tertiary-fill-border-color: #000;
 	--tertiary-fill-font-color: #fff;
 
-	--terriary-border-color: #e0e0e0;
-
-	--alert-border-color: #da1e28;
-
-	--placeholder-font-color: #a8a8a8;
-
+	/**
+	* Ghost
+	*/
+	--ghost-font-color: #000;
+	--ghost-fill-bg-color: #000;
+	--ghost-fill-font-color: #fff;
 
 	/**
-	* --color- 포인트색상
+	* Danger
 	*/
-
-	/**
-	* primary
-	*/
-	--color-primary: #1a9cff;
-
-	/**
-	* secondary
-	*/
-	--color-secondary: #383838;
-
-	/**
-	* danger
-	*/
-	--color-danger: #FF003E;
-
-	/**
-	* disabled
-	*/
-	--bg-disabled: #E8E8E8;
-	--c-disabled: #9E9E9E;
+	--danger-bg-color: #da1e28;
+	--danger-border-color: #da1e28;
+	--danger-font-color: #da1e28;
+	--danger-fill-font: #fff;
 
 	/**
 	* SNS Color
 	*/
-	--sns-naver-color: #15BD66;
-	--sns-naver-subcolor: #fff;
-	--sns-kakao-color: #FEE500;
-	--sns-kakao-subcolor: #03166C;
-	--sns-google-color: #fff;
-	--sns-google-subcolor: #000;
-	--sns-apple-color: #000;
-	--sns-apple-subcolor: #fff;
+	--sns-naver-bg-color: #fff;
+	--sns-naver-font-color: #15BD66;
+	--sns-naver-fill-bg-color: #15BD66;
+	--sns-naver-fill-font-color: #fff;
+
+	--sns-kakao-bg-color: #fff;
+	--sns-kakao-font-color: #03166C;
+	--sns-kakao-fill-bg-color: #FEE500;
+	--sns-kakao-fill-font-color: #03166C;
+
+	--sns-google-bg-color: #fff;
+	--sns-google-font-color: #000;
+	--sns-google-fill-bg-color: #fff;
+	--sns-google-fill-font-color: #000;
+
+	--sns-apple-bg-color: #000;
+	--sns-apple-font-color: #fff;
+	--sns-apple-fill-bg-color: #000;
+	--sns-apple-fill-font-color: #fff;
 }
