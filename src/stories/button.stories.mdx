@@ -8,56 +8,49 @@ import { Button } from '../components/button';
 
 # Button
 
-버튼에 관한 설명을 합니다
+버튼에 관한 설명을 합니다.
 
 -----
 
-# theme 사용
+# Kind
 
-css 에서 primary 색상을 지정하여 사용할 수 있게하였습니다.
+버튼의 종류입니다.
 
-css 에서 --color-primary: #ff0; 을 선언해 두고
-class를 적용하면서 bg(--color-primary) 라고 하게 되면
-css 에서 정한 색상이 배경색상으로 사용됩니다.
-
-** AdorableCSS 개발자(teo.yu)님과 질의 내용 중(권이준 실장)
+<Button kind="primary" size="large" usrclass="m(10)">Primary</Button>
+<Button kind="secondary" size="large" usrclass="m(10)">Secondary</Button>
+<Button kind="tertiary" size="large" usrclass="m(10)">Tertiary</Button>
+<Button kind="tertiary-fixed" size="large" usrclass="m(10)">Tertiary-fixed</Button>
+<Button kind="ghost" size="large" usrclass="m(10)">Ghost</Button>
+<Button kind="danger" size="large" usrclass="m(10)">Danger</Button>
+<Button kind="danger--tertiary" size="large" usrclass="m(10)">Danger--terriary</Button>
+<Button kind="danger--ghost" size="large" usrclass="m(10)">Danger--ghost</Button>
 
 -----
 
-# Primary class
+# Sizes
 
-<pre><code>
-bg(--color-primary) c(#fff) b(0)<br />
-pointer transition(.2s)<br />
-hover:brightness(0.95) hover:elevation(4)<br />
-active:b(0) active:brightness(0.8) active:elevation(1)<br />
-disabled:bg(--bg-disabled) disabled:c(--c-disabled)<br />
-disabled:hover:brightness(1) disabled:hover:elevation(0)<br />
-disabled:active:brightness(1) disabled:active:elevation(0)
-</code></pre>
+크기에 따라 높이가 변화됩니다.
 
-<p></p>
+<Button kind="secondary" size="small" usrclass="m(10)">Small</Button>
+<Button kind="secondary" size="medium" usrclass="m(10)">Medium</Button>
+<Button kind="secondary" size="large" usrclass="m(10)">Large</Button>
+<Button kind="secondary" size="expressive" usrclass="m(10)">Expressive</Button>
+<Button kind="secondary" size="extralarge" usrclass="m(10)">Extralarge</Button>
+
 -----
-<p></p>
 
-# SourceCode Test
+# Disabled
 
-* 샘플 컴포넌트
+비활성화시 모습입니다.
 
-<Button kind="primary" size="large" usrclass="c(green)">button test</Button>
+<Button kind="primary" size="large" usrclass="m(10)" disabled>Primary</Button>
+<Button kind="secondary" size="large" usrclass="m(10)" disabled>Secondary</Button>
+<Button kind="tertiary" size="large" usrclass="m(10)" disabled>Tertiary</Button>
+<Button kind="ghost" size="large" usrclass="m(10)" disabled>Ghost</Button>
+<Button kind="danger" size="large" usrclass="m(10)" disabled>Danger</Button>
 
-* pre code 태그 적용
+-----
 
-<pre><code><Button kind="primary" size="large" usrclass="c(green)">button test</Button></code></pre>
+# Click
 
-code 태그의 기본 스타일은 적용되지만 코드 내용을 보여주진 못하고 컴포넌트 내용을 그대로 실행함.
-
-* 태그를 변환하여 표시
-
-<code>
-<div class="p(10) ">&lt;Button kind="<span class="c(red)">primary</span>" size="<span class="c(red)">lg</span>" usrclass="<span class="c(red)">c(green)</span>"&gt;button test&lt;/Button&gt;</div>
-</code>
-
-&lt;code&gt; 태그를 사용한 코드 보여주는 방법은 적용되지 않는것으로 추측됩니다.
-
-< 를 변환하여 적용하면 코드를 보여줄 수는 있습니다.
+<Button kind="secondary" size="large" usrclass="m(10)" onClick={ () => { alert('Click!'); } }>Click me!</Button>
