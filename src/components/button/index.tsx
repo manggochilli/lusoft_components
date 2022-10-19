@@ -63,7 +63,7 @@ export const Button = ({
 	: kind === 'tertiary' ?
 		`bg(--white-color) c(--tertiary-font-color) b(1) bc(--tertiary-border-color) ` +
 		`pointer transition(.2s) ` +
-		`hover:bg(--tertiary-fill-bg-color) hover:c(--tertiary-fill-font-color) hover:b(0) hover:elevation(4) ` +
+		`hover:bg(--tertiary-fill-bg-color) hover:c(--tertiary-fill-font-color) hover:b(1) hover:bc(--tertiary-fill-bg-color) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--disabled-bg-color) disabled:c(--disabled-font-color) disabled:b(0) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'tertiary-fixed' ?
