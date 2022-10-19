@@ -81,20 +81,17 @@ GhostButton.story = {
   name:'',
 }
 
-export const DangerButton = () => {
-	return (
-		<div className='subbox gap(0/30)'>
-			<div className='text-center'>
-				<Button kind="danger" size='large'>BUTTON</Button>
-			</div>
-			<div className='text-center'>
-				<Button kind="danger--tertiary" size='large'>BUTTON</Button>
-			</div>
-			<div className='text-center'>
-				<Button kind="danger--ghost" size='large'>BUTTON</Button>
-			</div>
-		</div>
-	)
+// Danger
+export const DangerButton = Template.bind({});
+DangerButton.args = {
+  kind: 'danger',
+  size: 'large',
+  usrclass: '',
+  children: 'Danger',
+};
+
+DangerButton.story = {
+  name:'',
 }
 
 export const sizes = () => {
