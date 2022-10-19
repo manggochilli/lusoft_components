@@ -6,7 +6,7 @@ interface ButtonProps {
 	/**
 	 * 셋업된 분류
 	 */
-	kind?: '' | 'primary' | 'secondary' | 'tertiary' | 'tertiary-ghost' | 'ghost' | 'danger' | 'danger--tertiary' | 'danger--ghost';
+	kind?: '' | 'primary' | 'secondary' | 'tertiary' | 'tertiary-fixed' | 'ghost' | 'danger' | 'danger--tertiary' | 'danger--ghost';
 	/**
 	 * 크기 설정
 	 */
@@ -49,60 +49,59 @@ export const Button = ({
 }: ButtonProps) => {
 	const btn_type = type ? type : 'button';
 	const kindclass = kind === 'primary' ?
-		`bg(--color-primary) c(#fff) b(0) ` +
+		`bg(--primary-bg-color) c(--primary-fill-font-color) b(0) ` +
 		`pointer transition(.2s) ` +
 		`hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
-		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
+		`disabled:bg(--disabled-bg-color) disabled:c(--disabled-font-color) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'secondary' ?
-		`bg(--color-secondary) c(#fff) b(0) ` +
+		`bg(--secondary-bg-color) c(--secondary-fill-font-color) b(0) ` +
 		`pointer transition(.2s) ` +
 		`hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
-		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
+		`disabled:bg(--disabled-bg-color) disabled:c(--disabled-font-color) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'tertiary' ?
-		`bg(#fff) c(--color-secondary) b(1) bc(--color-secondary) ` +
+		`bg(--white-color) c(--tertiary-font-color) b(1) bc(--tertiary-border-color) ` +
 		`pointer transition(.2s) ` +
-		`hover:bg(--color-secondary) hover:c(#fff) hover:b(0) hover:elevation(4) ` +
+		`hover:bg(--terriary-fill-bg-color) hover:c(--tertiary-fill-font-color) hover:b(0) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
-		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:b(0) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
-	: kind === 'tertiary-ghost' ?
-		`bg(#fff) c(--color-secondary) b(1) bc(--color-secondary) ` +
+		`disabled:bg(--disabled-bg-color) disabled:c(--disabled-font-color) disabled:b(0) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
+	: kind === 'tertiary-fixed' ?
+		`bg(--white-color) c(--terriary-font-color) b(1) bc(--tertiary-border-color) ` +
 		`pointer transition(.2s) ` +
-		//`hover:bg(#fff) hover:c(--color-secondary) hover:b(1) hover:bc(#fff) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
-		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:b(0) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
+		`disabled:bg(--disabled-bg-color) disabled:c(--disabled-font-color) disabled:b(0) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'ghost' ?
-		`bg(#fff) c(--color-secondary) b(0) ` +
+		`bg(--white-color) c(--ghost-font-color) b(0) ` +
 		`pointer transition(.2s) ` +
-		//`hover:bg(#dfdfdf) hover:c(--color-primary) hover:brightness(0.95) hover:elevation(4) ` +
-		//`active:b(0) active:brightness(0.8) active:elevation(1) ` +
-		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
+		`hover:bg(--ghost-fill-bg-color) hover:c(--ghost-fill-font-color) hover:brightness(0.95) hover:elevation(4) ` +
+		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
+		`disabled:bg(--disabled-bg-color) disabled:c(--disabled-font-color) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'danger' ?
-		`bg(--color-danger) c(#fff) b(0) ` +
+		`bg(--danger-bg-color) c(--danger-fill-font-color) b(0) ` +
 		`pointer transition(.2s) ` +
 		`hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
-		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
+		`disabled:bg(--disabled-bg-color) disabled:c(--disabled-font-color) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'danger--tertiary' ?
-		`bg(#fff) c(--color-danger) b(1) bc(--color-danger) ` +
+		`bg(--white-color) c(--danger-font-color) b(1) bc(--danger-border-color) ` +
 		`pointer transition(.2s) ` +
-		`hover:bg(--color-danger) hover:c(#fff) hover:brightness(0.95) hover:elevation(4) ` +
+		`hover:bg(--danger-bg-color) hover:c(--danger-fill-font-color) hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
-		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:b(0) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
+		`disabled:bg(--disabled-bg-color) disabled:c(--disabled-font-color) disabled:b(0) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	: kind === 'danger--ghost' ?
-		`bg(#fff) c(--color-danger) b(0) ` +
+		`bg(--white-color) c(--danger-font-color) b(0) ` +
 		`pointer transition(.2s) ` +
-		`hover:bg(--color-danger) hover:c(#fff) hover:brightness(0.95) hover:elevation(4) ` +
+		`hover:bg(--danger-fill-bg-color) hover:c(--danger-fill-font-color) hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
-		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
+		`disabled:bg(--disabled-bg-color) disabled:c(--disabled-font-color) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `
 	:
-		`bg(transparent) c(#000) b(1) bc(#ccc) ` +
+		`bg(transparent) c(--default-font-color) b(1) bc(--default-border-color) ` +
 		`pointer transition(.2s) ` +
 		`hover:b(0) ` +
 		`hover:brightness(0.95) hover:elevation(4) ` +
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
-		`disabled:bg(--bg-disabled) disabled:c(--c-disabled) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `;
+		`disabled:bg(--disabled-bg-color) disabled:c(--disabled-font-color) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `;
 	const sizeclass = size === 'small' ?
 		`h(32) p(2) r(8) font(14) 400 line-height(18) `
 	: size === 'medium' ?
