@@ -103,17 +103,15 @@ export const Button = ({
 		`active:b(0) active:brightness(0.8) active:elevation(1) ` +
 		`disabled:bg(--disabled-bg-color) disabled:c(--disabled-font-color) disabled:hover:brightness(1) disabled:hover:elevation(0) disabled:active:brightness(1) disabled:active:elevation(0) `;
 	const sizeclass = size === 'small' ?
-		`h(32) p(2) r(8) font(14) 400 line-height(18) `
+		`h(32) p(2) r(8) font(11) 400 line-height(32) `
 	: size === 'medium' ?
-		`h(40) p(2) r(8) font(14) 400 line-height(18) `
-	: size === 'large' ?
-		`h(48) p(2) r(8) font(14) 400 line-height(18) `
+		`h(39) p(2) r(8) font(13) 400 line-height(40) `
 	: size === 'expressive' ?
-		`h(48) p(2) r(8) font(16) 400 line-height(18) `
+		`h(48) p(2) r(8) font(18) 400 line-height(48) `
 	: size === 'extralarge' ?
-		`h(64) p(2) r(8) font(14) 400 line-height(18) `
-	:
-		`p(2) r(2) font(14) 400 `;
+		`h(66) p(2) r(8) font(22) 400 line-height(64) `
+	: // Default large
+		`h(48) p(2) r(8) font(16) 400 line-height(48) `;
 	const imgsize = size === 'small' ?
 		`w(24) h(24) `
 	: size === 'medium' ?
