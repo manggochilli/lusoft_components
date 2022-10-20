@@ -1,0 +1,73 @@
+import {adorableCSS} from "adorable-css"
+import { Meta } from '@storybook/addon-docs';
+
+import '../css/theme.css'
+import { Checkbox, Text } from '../components/index';
+
+<Meta title="LUsoft Components/Components/Checkbox/Overview" />
+
+# Checkbox
+
+checked 는 아직 구현되지 않았습니다.
+
+-----
+
+# Kind
+
+<div className="hbox(left) gap(20)">
+	<div className="hbox(left)">
+		<Checkbox kind="normal" size="large" _name="checkbox_sample_kind1" />
+		<label htmlFor="checkbox_sample_kind1" className="ml(5) pointer">
+			<Text size="large">normal</Text>
+		</label>
+	</div>
+	<div className="hbox(left)">
+		<Checkbox kind="primary_fill" size="large" _name="checkbox_sample_kind2" />
+		<label htmlFor="checkbox_sample_kind2" className="ml(5) pointer">
+			<Text size="large">primary_fill</Text>
+		</label>
+	</div>
+	<div className="hbox(left)">
+		<Checkbox kind="primary_ghost" size="large" _name="checkbox_sample_kind3" />
+		<label htmlFor="checkbox_sample_kind3" className="ml(5) pointer">
+			<Text size="large">primary_ghost</Text>
+		</label>
+	</div>
+</div>
+
+-----
+
+# Size
+
+<div className="hbox(left) gap(20)">
+	<div className="hbox(left)">
+		<Checkbox kind="primary_fill" size="small" _name="checkbox_sample_kind2" />
+		<label htmlFor="checkbox_sample_kind2" className="ml(5) pointer">
+			<Text size="small">small</Text>
+		</label>
+	</div>
+	<div className="hbox(left)">
+		<Checkbox kind="primary_fill" size="medium" _name="checkbox_sample_kind2" />
+		<label htmlFor="checkbox_sample_kind2" className="ml(5) pointer">
+			<Text size="medium">medium</Text>
+		</label>
+	</div>
+	<div className="hbox(left)">
+		<Checkbox kind="primary_fill" size="large" _name="checkbox_sample_kind2" />
+		<label htmlFor="checkbox_sample_kind2" className="ml(5) pointer">
+			<Text size="large">large</Text>
+		</label>
+	</div>
+	<div className="hbox(left)">
+		<Checkbox kind="primary_fill" size="expressive" _name="checkbox_sample_kind2" />
+		<label htmlFor="checkbox_sample_kind2" className="ml(5) pointer">
+			<Text size="expressive">expressive</Text>
+		</label>
+	</div>
+	<div className="hbox(left)">
+		<Checkbox kind="primary_fill" size="extralarge" _name="checkbox_sample_kind2" />
+		<label htmlFor="checkbox_sample_kind2" className="ml(5) pointer">
+			<Text size="extralarge">extralarge</Text>
+		</label>
+	</div>
+</div>
