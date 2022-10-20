@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Button } from '../components/button';
 
 export default {
-	title: 'LUsoft Components/Components/button', // 여기에 적어준 경로대로 스토리북 네비게이션에 표시됩니다.
+	title: 'LUsoft Components/Components/Button', // 여기에 적어준 경로대로 스토리북 네비게이션에 표시됩니다.
 	component: Button,
 	argTypes: {
 		kind: { control: 'select' },
