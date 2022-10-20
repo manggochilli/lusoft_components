@@ -1,10 +1,12 @@
 import React,{ useState } from "react";
 import { Link } from "react-router-dom";
-import { Icon, InputText, InputPass, Button, SNSbutton } from '../../components/index';
+import { Icon, InputText, InputPass, Button, SNSbutton, Stick, Text } from '../../components/index';
 
 function MemberLogin() {
+
 	// 탭 메뉴에 따른 반응 - 개인/기업 회원
 	const [ tabActive , setTabActive ] = useState('person');
+
 	return (
 		<div className="pack w(100%) p(20) bg(#000.5)">
 			<div className="relative w(375px~100%~1000px) bg(#fff)">
@@ -70,7 +72,7 @@ function MemberLogin() {
 
 					</div>
 
-					{/** 아이디 */}
+					{/** 입력 */}
 					<div className="vbox vgap(9)">
 
 						{/** <Inputs/> **/}
@@ -126,6 +128,8 @@ function MemberLogin() {
 
 					{/** 로그인버튼, 옵션, 링크 */}
 					<div className="vbox vgap(10)">
+
+						{/** 로그인버튼 */}
 						<div className="vbox p(0/16) w(375px~100%~1000px)">
 
 							{/** <Button/> **/}
@@ -208,19 +212,11 @@ function MemberLogin() {
 					{/** <Join_link/> **/}
 					<div className="pack p(0/16) w(375px~100%~1000px)">
 						<div className="hbox pack flex">
-							<div className="hbox p(9/10)">
-								<div className="font(11/16) c(#777) text-center">아직 회원이 아니세요?</div>
-							</div>
+							<Text size="small" usrclass="m(0/10) c(#777)">아직 회원이 아니세요?</Text>
 
 							{/** <Button/> **/}
-							<div className="vbox p(2) w(121) h(34) r(8) clip">
-
-								{/** <_Button_base/> **/}
-								<Link to="/" className={`${ tabActive === 'person' ? '' : 'none' }`}><Button kind="ghost" size="small" usrclass="c(--primary-font-color)">개인 회원가입</Button></Link>
-								<Link to="/" className={`${ tabActive === 'company' ? '' : 'none' }`}><Button kind="ghost" size="small" usrclass="c(--primary-font-color)">기업 회원가입</Button></Link>
-								{/** </_Button_base> **/}
-
-							</div>
+							<Link to="/" className={`${ tabActive === 'person' ? '' : 'none' }`}><Button kind="ghost" size="small" usrclass="c(--primary-font-color)">개인 회원가입</Button></Link>
+							<Link to="/" className={`${ tabActive === 'company' ? '' : 'none' }`}><Button kind="ghost" size="small" usrclass="c(--primary-font-color)">기업 회원가입</Button></Link>
 							{/** </Button> **/}
 
 						</div>
