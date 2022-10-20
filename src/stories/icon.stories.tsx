@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Icon } from '../components/icon';
 
 export default {
-	title: 'LUsoft Components/Components/icon',
+	title: 'LUsoft Components/Components/Icon',
 	component: Icon,
 	argTypes: {
 		iconName: { control: 'select' },
