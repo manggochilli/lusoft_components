@@ -138,50 +138,33 @@ function MemberLogin() {
 
 						</div>
 
-						{/** <Login_group/> **/}
-						<div className="pack p(0/16) w(375px~100%~1000px)">
-							<div className="hbox pack hgap(60) flex">
+						{/** 자동로그인+아이디찾기+비밀번호찾기 */}
+						<div className="vbox p(0/16) w(375px~100%~1000px)">
 
-								{/** <Checkbox/> **/}
-								<div className="vbox p(0/50/0/0)">
+							<div className="hbox pack flex">
 
-									{/** <_Checkbox_base/> **/}
-									<div className="vbox">
-										<div className="hbox hgap(8)">
+								<div className="hbox">
+									<input type="checkbox" id="test_checkbox" name="test_checkbox" className="before:block+w(18)+h(18)+b(1)+bc(--default-border-color)+content('') &:checked:before:w(18)+h(18)+b(1)+bc(--primary-border-color)+r(3)+bg(--primary-bg-color)+font(16) &:checked:before:text-center &:checked:before:line-height(16)  &:checked:before:c(--primary-fill-font-color)+content('\2714')" />
+									<label htmlFor="test_checkbox" className="ml(5)">
+										<Text size="medium" usrclass="AppleSD (#262626)">자동 로그인</Text>
+									</label>
+								</div>
 
-											{/** <Checkbox__checked__filled/> **/}
-											<div className="relative w(18) h(18) bg(#fff.1) clip">
+								<div className="hbox pack flex">
+									<div className="flex hbox(right)">
 
-											</div>
-											{/** </Checkbox__checked__filled> **/}
+										<Button kind="ghost" size="medium">아이디 찾기</Button>
 
-											<div className="vbox">
-												<div className="font(11/16) c(#262626)">자동 로그인</div>
-											</div>
+										<Stick size="medium" />
 
-										</div>
+										<Button kind="ghost" size="medium">비밀번호 찾기</Button>
+
 									</div>
-									{/** </_Checkbox_base> **/}
-
 								</div>
-								{/** </Checkbox> **/}
 
-								<div className="hbox pack hgap(2) w(145)">
-
-									{/** <Button/> **/}
-									<Button kind="ghost" size="small" usrclass="c(#262626)">아이디 찾기</Button>
-									{/** </Button> **/}
-
-									<div className="w(1) h(16) bg(#777)"></div>
-
-									{/** <Button/> **/}
-									<Button kind="ghost" size="small" usrclass="c(#262626)">비밀번호 찾기</Button>
-									{/** </Button> **/}
-
-								</div>
 							</div>
+
 						</div>
-						{/** </Login_group> **/}
 
 					</div>
 
