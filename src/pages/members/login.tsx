@@ -1,6 +1,6 @@
 import React,{ useState } from "react";
 import { Link } from "react-router-dom";
-import { Icon, InputText, InputPass, Button, SNSbutton, Stick, Text } from '../../components/index';
+import { Icon, InputText, InputPass, Button, SNSbutton, Stick, Text, Checkbox } from '../../components/index';
 
 function MemberLogin() {
 
@@ -144,8 +144,8 @@ function MemberLogin() {
 							<div className="hbox pack flex">
 
 								<div className="hbox">
-									<input type="checkbox" id="test_checkbox" name="test_checkbox" className="before:block+w(18)+h(18)+b(1)+bc(--default-border-color)+content('') &:checked:before:w(18)+h(18)+b(1)+bc(--primary-border-color)+r(3)+bg(--primary-bg-color)+font(16) &:checked:before:text-center &:checked:before:line-height(16)  &:checked:before:c(--primary-fill-font-color)+content('\2714')" />
-									<label htmlFor="test_checkbox" className="ml(5)">
+									<Checkbox kind="primary_ghost" size="medium" _name="test_checkbox" />
+									<label htmlFor="test_checkbox" className="ml(5) pointer">
 										<Text size="medium" usrclass="AppleSD (#262626)">자동 로그인</Text>
 									</label>
 								</div>
