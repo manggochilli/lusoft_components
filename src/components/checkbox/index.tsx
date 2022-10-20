@@ -18,7 +18,7 @@ export const Checkbox = ({
 	_name,
 	...props
 }: CheckboxProps) => {
-	const baseClass = `pointer before:block+b(1)+bc(--default-border-color)+content('') &:checked:before:b(1)+content('✔') &:checked:before:text-center`;
+	const baseClass = `pointer before:block+b(1)+bc(--default-border-color)+content('') &:checked:before:b(1)+content('✓') &:checked:before:text-center`;
 	const kindClass = kind === 'primary_fill' ?
 		`&:checked:before:bc(--primary-border-color)+bg(--primary-bg-color) &:checked:before:c(--primary-fill-font-color)`
 	: kind === 'primary_ghost' ?
