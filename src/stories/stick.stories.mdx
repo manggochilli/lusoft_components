@@ -1,0 +1,45 @@
+import {adorableCSS} from "adorable-css"
+import { Meta } from '@storybook/addon-docs';
+
+import '../css/theme.css'
+import { Button, Stick } from '../components/index';
+
+<Meta title="LUsoft Components/Components/Stick/Overview" />
+
+# Stick
+
+구분선입니다.
+
+버튼사이에 구분선이 들어갈 때 높이의 중간에 위치할 수 있게 준비했습니다.
+
+-----
+
+# Size
+
+<div className="hbox(left) gap(10)">
+	<div className="hbox p(10) b(1) bc(#efefef)">
+		<Button kind="secondary" size="small" usrclass="p(0/10) bg(#f5f5f5) c(#000)">small</Button>
+		<Stick size="small" />
+		<Button kind="secondary" size="small" usrclass="p(0/10) bg(#f5f5f5) c(#000)">size</Button>
+	</div>
+	<div className="hbox p(10) b(1) bc(#efefef)">
+		<Button kind="secondary" size="medium" usrclass="p(0/10) bg(#f5f5f5) c(#000)">medium</Button>
+		<Stick size="medium" />
+		<Button kind="secondary" size="medium" usrclass="p(0/10) bg(#f5f5f5) c(#000)">size</Button>
+	</div>
+	<div className="hbox p(10) b(1) bc(#efefef)">
+		<Button kind="secondary" size="large" usrclass="p(0/10) bg(#f5f5f5) c(#000)">large</Button>
+		<Stick size="large" />
+		<Button kind="secondary" size="large" usrclass="p(0/10) bg(#f5f5f5) c(#000)">size</Button>
+	</div>
+	<div className="hbox p(10) b(1) bc(#efefef)">
+		<Button kind="secondary" size="expressive" usrclass="p(0/10) bg(#f5f5f5) c(#000)">expressive</Button>
+		<Stick size="expressive" />
+		<Button kind="secondary" size="expressive" usrclass="p(0/10) bg(#f5f5f5) c(#000)">size</Button>
+	</div>
+	<div className="hbox p(10) b(1) bc(#efefef)">
+		<Button kind="secondary" size="extralarge" usrclass="p(0/10) bg(#f5f5f5) c(#000)">extralarge</Button>
+		<Stick size="extralarge" />
+		<Button kind="secondary" size="extralarge" usrclass="p(0/10) bg(#f5f5f5) c(#000)">size</Button>
+	</div>
+</div>
