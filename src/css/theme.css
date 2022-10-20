@@ -108,3 +108,5 @@ html {
 	--sns-apple-fill-bg-color: #000;
 	--sns-apple-fill-font-color: #fff;
 }
+
+input[type=checkbox] { appearance:none; }
